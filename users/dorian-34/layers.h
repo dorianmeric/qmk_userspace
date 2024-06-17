@@ -30,15 +30,15 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 
 #define MIRYOKU_ALTERNATIVES_MOUSE \
 DM_REC1,           DM_PLY1,           DM_REC2,           DM_PLY2,           DM_RSTP,                    KC_WWW_BACK,       KC_WWW_FORWARD,    xxxx,              xxxx,              JIGGLE,             \
-KC_LGUI,           KC_LALT,           KC_LCTL,           C(KC_S),           LSFT(KC_F9),                A(KC_F4),          KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
+KC_LGUI,           KC_LALT,           KC_LCTL,           C(KC_S),           LSFT(KC_F9),             QK_CAPS_WORD_TOGGLE,  KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
 TD(U_TD_U_MOUSE),  RSFT(KC_HOME),     RCTL(KC_BSPC),     RCTL(KC_DEL),      RSFT(KC_END),               xxxx,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
 U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_BTN1,           KC_BTN2,           KC_BTN3,           U_NP,              U_NP
 
 
 #define MIRYOKU_ALTERNATIVES_MEDIA \
-xxxx,              xxxx,              xxxx,              xxxx,              KC_MEDIA_PLAY_PAUSE,        RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,           \
-KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           KC_CAPS_LOCK,               OU_AUTO,          KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
-TD(U_TD_U_MEDIA),  KC_ALGR,           xxxx,              KC_INS,            QK_CAPS_WORD_TOGGLE,        DF(U_TAP),         DF(U_BASE),        xxxx,              xxxx,              xxxx,              \
+A_GRAVE,           E_GRAVE,           I_CIRC,            U_CIRC,          KC_MEDIA_PLAY_PAUSE,        RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,           \
+A_CIRC,            E_AIGU,            O_CIRC,            KC_LSFT,           KC_CAPS_LOCK,               OU_AUTO,          KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
+C_CEDILLE,         E_CIRC,            U_GRAVE,           KC_INS,            QK_CAPS_WORD_TOGGLE,        DF(U_TAP),         DF(U_BASE),        xxxx,              xxxx,              xxxx,              \
 U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_MUTE,        KC_MEDIA_PLAY_PAUSE,  KC_MEDIA_STOP,     U_NP,              U_NP
 
 
@@ -50,7 +50,7 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 #define MIRYOKU_ALTERNATIVES_NUM \
 KC_LPRN,           KC_7,              KC_8,              KC_9,              KC_RPRN,                    KC_CIRC,           KC_KP_PLUS,        KC_KP_MINUS,       KC_KP_ASTERISK,    KC_KP_SLASH,              \
 KC_COMM,           KC_4,              KC_5,              KC_6,              KC_EQL,                     KC_E,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
-KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_F4,             KC_DOT,            xxxx,              KC_ALGR,           TD(U_TD_U_NUM),              \
+KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_F4,             KC_DOT,            MO(U_NUMPAD),  LM(U_NUMPAD,MOD_RALT), TD(U_TD_U_NUM),              \
 U_NP,              U_NP,              KC_DOT,            KC_0,              KC_MINS,                    KC_BSPC,           xxxx,              xxxx,              U_NP,              U_NP
 
 // layers for symbols. LEFTMOST RIGHT THUMB
@@ -74,5 +74,15 @@ U_NP,              U_NP,              xxxx,              KC_TAB,            KC_S
 KC_TAB,            KC_Q,              KC_W,              KC_E,              KC_R,                       KC_T,               KC_Y,              KC_U,              KC_I,              KC_O,                         \
 KC_LSFT,           KC_A,              KC_S,              KC_D,              KC_F,                       KC_G,               KC_H,              KC_J,              KC_K,              KC_L,                       \
 KC_LCTL,           KC_Z,              KC_X,              KC_C,              KC_V,                       KC_B,               KC_N,              KC_M,              A(KC_TAB),         DF(U_BASE),           \
-U_NP,              U_NP,              KC_ESC,            KC_LALT,           KC_SPC,                     KC_BSPC,            KC_ENT,           KC_DEL,            U_NP,              U_NP
+U_NP,              U_NP,              KC_ESC,            KC_LALT,           KC_SPC,                     KC_BSPC,            KC_ENT,            KC_DEL,            U_NP,              U_NP
+
+
+
+#define MIRYOKU_LAYER_NUMPAD \
+KC_KP_SLASH,      KC_KP_7,           KC_KP_8,           KC_KP_9,            KC_KP_ASTERISK,             xxxx,               xxxx,               xxxx,               xxxx,               xxxx,              \
+xxxx,             KC_KP_4,           KC_KP_5,           KC_KP_6,            KC_KP_PLUS,                 xxxx,               KC_LSFT,            KC_LCTL,            KC_LALT,           KC_LGUI,           \
+KC_KP_DOT,        KC_KP_1,           KC_KP_2,           KC_KP_3,            KC_KP_MINUS,                xxxx,               xxxx,               xxxx,               KC_ALGR,           xxxx,              \
+U_NP,              U_NP,           xxxx,                KC_KP_0,            KC_KP_ENTER,                KC_BSPC,            xxxx,               xxxx,               U_NP,              U_NP
+
+
 

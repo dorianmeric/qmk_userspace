@@ -165,14 +165,15 @@
 #endif
 
 #if !defined(MIRYOKU_LAYER_FUN)
-  
     #define MIRYOKU_LAYER_FUN MIRYOKU_ALTERNATIVES_FUN
 #endif
 #if !defined(MIRYOKU_LAYERMAPPING_FUN)
   #define MIRYOKU_LAYERMAPPING_FUN MIRYOKU_MAPPING
 #endif
 
-
+#if !defined(MIRYOKU_LAYERMAPPING_NUMPAD)
+  #define MIRYOKU_LAYERMAPPING_NUMPAD MIRYOKU_MAPPING
+#endif
 ///////////////////////////////////////////////////////
 
 
@@ -187,8 +188,8 @@ MIRYOKU_X(MEDIA,  "Media") \
 MIRYOKU_X(NUM,    "Num") \
 MIRYOKU_X(SYM,    "Sym") \
 MIRYOKU_X(TAP,    "Tap") \
-MIRYOKU_X(FUN,    "Fun")
-
+MIRYOKU_X(FUN,    "Fun") \
+MIRYOKU_X(NUMPAD,  "Numpad") 
 #endif
 
 
