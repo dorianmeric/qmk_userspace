@@ -39,16 +39,14 @@
 // #define COMBO_HOLD_TERM 200  // how long at least one of the combo keys must be held to trigger
 #define EXTRA_SHORT_COMBOS // limits combos to 6 keys max 
 #define COMBO_VARIABLE_LEN 
-
 #define COMBO_TERM_PER_COMBO
-
+#define COMBO_SHOULD_TRIGGER
+#define COMBO_MUST_PRESS_IN_ORDER_PER_COMBO // Controls if a given combo should fire only if its keys are pressed in order. (default: true)
 
 #define FORCE_NKRO // needed for quicker macros
 #define DYNAMIC_MACRO_NO_NESTING  // disables recursive macros
 
 #define TAP_CODE_DELAY 10 // default 0 
-
-#define COMBO_MUST_PRESS_IN_ORDER_PER_COMBO // Controls if a given combo should fire only if its keys are pressed in order. (default: true)
 
 /*
 * `#define TAPPING_TERM 200`

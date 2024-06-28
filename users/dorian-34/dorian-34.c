@@ -178,12 +178,13 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 
     switch (combo->keycode) {
         case thum_base_left:
-        case thum_base_left2:
         case thum_base_right:
         case thum_nav:
         case thum_mouse:
         case thum_media:
         case thum_num:
+        case game_thum_base_left:
+        case game_thum_base_right:
             return 200;
 
         default:
@@ -229,6 +230,35 @@ bool get_combo_must_press_in_order(uint16_t index, combo_t *combo) {
             return false; // TAPPING_TERM;
     }
 
+}
+
+
+// disable some combos on some layers
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    /* Disable combo `SOME_COMBO` on layer `_LAYER_A` */
+    switch (combo_index) {
+        case game_00:
+        case game_01:
+        case game_02:
+        case game_03:
+        case game_05:
+        case game_p:
+        case game_n:
+        case game_bootloader:
+        case game_thum_base_left:
+        case game_thum_base_right:
+            if (layer_state_is(U_TAP)) {
+                return true;
+            } else {
+                return false;
+            }
+    }
+
+    if (layer_state_is(U_TAP)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
+        return false;
+    }
+
+    return true;
 }
 
 
