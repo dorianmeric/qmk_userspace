@@ -199,16 +199,19 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LGUI_T(KC_A): // windows key
         case LGUI_T(KC_O): // windows key
-            return 400;
+            return 300;
 
-        // the home row keys
-        case LALT_T(KC_R):
-        case LCTL_T(KC_S):
-        case LSFT_T(KC_T):
-        case LSFT_T(KC_N):
-        case LCTL_T(KC_E):
-        case LALT_T(KC_I):
+        // the home row keys - Ctrl and Alt
+        case LCTL_T(KC_S): // Ctrl left
+        case LCTL_T(KC_E): // Ctrl right
+        case LALT_T(KC_R): // alt left
+        case LALT_T(KC_I): // alt right
             return 200;
+
+        // the home row keys - Shift
+        case LSFT_T(KC_T): // Shift left
+        case LSFT_T(KC_N): // Shift right
+            return 100;
 
         default:
             return 200; // TAPPING_TERM;
@@ -222,8 +225,8 @@ bool get_combo_must_press_in_order(uint16_t index, combo_t *combo) {
     switch (index) {
         case combo_io: 
         case combo_oi: 
-        case combo_regards:
-        case combo_thanks:
+  //      case combo_regards:
+  //      case combo_thanks:
             return true;
 
         default:
@@ -234,31 +237,39 @@ bool get_combo_must_press_in_order(uint16_t index, combo_t *combo) {
 
 
 // disable some combos on some layers
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+// https://docs.qmk.fm/features/combo
+bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     /* Disable combo `SOME_COMBO` on layer `_LAYER_A` */
-    switch (combo_index) {
+    
+    switch (index) {
         case game_00:
         case game_01:
         case game_02:
         case game_03:
+        case game_04:
         case game_05:
         case game_p:
         case game_n:
         case game_bootloader:
         case game_thum_base_left:
         case game_thum_base_right:
+
             if (layer_state_is(U_TAP)) {
                 return true;
             } else {
                 return false;
             }
+
+        default:
+
+            if (layer_state_is(U_TAP)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
+                return false;
+            } else {
+                return true;
+            }
     }
 
-    if (layer_state_is(U_TAP)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
-        return false;
-    }
 
-    return true;
 }
 
 
