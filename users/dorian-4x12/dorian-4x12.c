@@ -277,15 +277,15 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LGUI_T(KC_A): // windows key
-        case LGUI_T(KC_O): // windows key
+        case RGUI_T(KC_O): // windows key
             return 400;
 
         case LALT_T(KC_R):
         case LCTL_T(KC_S):
         case LSFT_T(KC_T):
-        case LSFT_T(KC_N):
-        case LCTL_T(KC_E):
-        case LALT_T(KC_I):
+        case RSFT_T(KC_N):
+        case RCTL_T(KC_E):
+        case RALT_T(KC_I):
             return 200;
 
         default:

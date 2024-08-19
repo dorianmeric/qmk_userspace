@@ -22,7 +22,7 @@ COMB( combo98,     QK_BOOTLOADER,            KC_Q,  KC_W, KC_F,  KC_P,  KC_B)   
 // Right Hand /////////////////////////////////////////////////////////////////////////////////////////////
 COMB( combo01,     RCTL(KC_BSPC),            J_KEY,          KC_L            )           // u++i = Backspace Word
 COMB( combo05,     RCTL(KC_DEL),             KC_U,           KC_Y         )           // m+, = delete next word     h,
-COMB( combo07,     KC_MINUS,                 KC_M,           LSFT_T(KC_N)    )           // h+j = -  , can also get _ with a Shift   
+COMB( combo07,     KC_MINUS,                 KC_M,           RSFT_T(KC_N)    )           // h+j = -  , can also get _ with a Shift   
 COMB( combo08,     KC_SEMICOLON,             KC_M,           KC_K    )                   // m+k = :
  
 COMB( combo99,     QK_BOOTLOADER,            J_KEY,              KC_L,              KC_U,             KC_Y,              KC_SLSH)       // whole top row = puts the mcu in bootloader mode
@@ -46,16 +46,16 @@ COMB( game_thum_base_right, KC_DEL,         KC_BSPC,     KC_ENT              )
 
 
 ///// TEXT SHORTCUT /////////////////////////////////////////////////////////////////////////////////////////////
-SUBS( combo_io,     "io",             LALT_T(KC_I),      LGUI_T(KC_O)        )                  
-SUBS( combo_oi,     "oi",             LGUI_T(KC_O),      LALT_T(KC_I)        )               
-SUBS( combo_ion,    "ion",            LSFT_T(KC_N),      LGUI_T(KC_O),   LALT_T(KC_I)        )              
-SUBS( combo_tion,   "tion",           LSFT_T(KC_T),      LSFT_T(KC_N),   LGUI_T(KC_O),      LALT_T(KC_I)        )   
-SUBS( combo_tion2,  "tion",           LSFT_T(KC_N),      LCTL_T(KC_E),   LALT_T(KC_I),      LGUI_T(KC_O)        )       
- 
+SUBS( combo_io,     "io",             RALT_T(KC_I),      RGUI_T(KC_O)        )                  
+SUBS( combo_oi,     "oi",             RGUI_T(KC_O),      RALT_T(KC_I)        )               
+SUBS( combo_ion,    "ion",            RSFT_T(KC_N),      RGUI_T(KC_O),   RALT_T(KC_I)        )              
+SUBS( combo_tion,   "tion",           LSFT_T(KC_T),      RSFT_T(KC_N),   RGUI_T(KC_O),      RALT_T(KC_I)        )   
+SUBS( combo_tion2,  "tion",           RSFT_T(KC_N),      RCTL_T(KC_E),   RALT_T(KC_I),      RGUI_T(KC_O)        )       
+
 //SUBS( combo_regards,  "Regards,\nDorian",           KC_P,              KC_B        )   
 //SUBS( combo_thanks,  "Thanks,\nDorian",             KC_F,              KC_P        )     
  
  
-SUBS( combo_you,    "you",            KC_Y,          LGUI_T(KC_O),   KC_U                     )   
-SUBS( combo_You,    "You",            LSFT_T(KC_T),  KC_Y,           LGUI_T(KC_O),   KC_U     )  
+SUBS( combo_you,    "you",            KC_Y,          RGUI_T(KC_O),   KC_U                     )   
+SUBS( combo_You,    "You",            LSFT_T(KC_T),  KC_Y,           RGUI_T(KC_O),   KC_U     )  
 SUBS( combo_bps,    "bps",            KC_B,          KC_P,           LCTL_T(KC_S)             )

@@ -1,0 +1,1 @@
+git -C "../qmk_firmware/" pull

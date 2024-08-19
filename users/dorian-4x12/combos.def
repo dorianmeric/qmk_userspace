@@ -42,7 +42,7 @@ COMB(combo01,     RCTL(KC_BSPC),            J_KEY,          KC_L            )   
 COMB(combo05,     RCTL(KC_DEL),             KC_U,           KC_Y         )           // m+, = delete next word     h,
 // COMB(combo06,     RSFT(KC_END),             KC_N,           KC_M            )            // n+m = Select line right   kh
 
-COMB(combo07,     KC_MINUS,                 KC_M,           LSFT_T(KC_N)    )           // h+j = -  , can also get _ with a Shift   
+COMB(combo07,     KC_MINUS,                 KC_M,           RSFT_T(KC_N)    )           // h+j = -  , can also get _ with a Shift   
 COMB(combo08,     KC_SEMICOLON,             KC_M,           KC_K    )                   // m+k = :
 
 // COMB(combo09,     KC_SCLN,                  KC_H,           LALT_T(KC_L)    )            // k+l = ;

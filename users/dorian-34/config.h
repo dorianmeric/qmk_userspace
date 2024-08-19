@@ -48,6 +48,10 @@
 
 #define TAP_CODE_DELAY 10 // default 0 
 
+#define RETRO_TAPPING
+#define RETRO_TAPPING_PER_KEY // https://docs.qmk.fm/tap_hold#tap-or-hold-decision-modes
+
+
 /*
 * `#define TAPPING_TERM 200`
   * how long before a key press becomes a hold
@@ -104,3 +108,4 @@
   * Sets the delay for Tap Hold keys (`LT`, `MT`) when using `KC_CAPS_LOCK` keycode, as this has some special handling on MacOS.  The value is in milliseconds, and defaults to 80 ms if not defined. For macOS, you may want to set this to 200 or higher.
   * 
   * */
+
