@@ -425,17 +425,17 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// https://docs.qmk.fm/tap_hold#tap-or-hold-decision-modes
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // these keys may be held by themselves and the mouse, and should be trated as the modifier (eg. shift mwheel)
-        case LGUI_T(KC_A): // windows key
-        case LALT_T(KC_R): // alt left
-        case LCTL_T(KC_S): // Ctrl left
-        case LSFT_T(KC_T): // Shift left
-            return false;
+// // https://docs.qmk.fm/tap_hold#tap-or-hold-decision-modes
+// bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         // these keys may be held by themselves and the mouse, and should be trated as the modifier (eg. shift mwheel)
+//         case LGUI_T(KC_A): // windows key
+//         case LALT_T(KC_R): // alt left
+//         case LCTL_T(KC_S): // Ctrl left
+//         case LSFT_T(KC_T): // Shift left
+//             return false;
 
-        default:
-            return true; // otherwise the keys should tap
-    }
-}
+//         default:
+//             return true; // otherwise the keys should tap
+//     }
+// }

@@ -48,8 +48,8 @@
 
 #define TAP_CODE_DELAY 10 // default 0 
 
-#define RETRO_TAPPING
-#define RETRO_TAPPING_PER_KEY // https://docs.qmk.fm/tap_hold#tap-or-hold-decision-modes
+// #define RETRO_TAPPING  // no, retro tapping doesnt make sense for me. do not activate, otherwise it will trigger a "Delete" after tapping F2 or F3 (not sure why)
+// #define RETRO_TAPPING_PER_KEY // https://docs.qmk.fm/tap_hold#tap-or-hold-decision-modes
 
 
 /*
