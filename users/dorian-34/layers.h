@@ -26,7 +26,7 @@ U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_MOUSE,KC_TAB), LT(
 KC_HOME,           LCTL(KC_0),        KC_F5,             KC_END,            KC_PGUP,                    KC_WWW_BACK,       KC_WWW_FORWARD,    xxxx,              xxxx,              xxxx,             \
 KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           KC_PGDN,                  QK_CAPS_WORD_TOGGLE, KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           \
 KC_END,            A(KC_F4),          KC_F2,             KC_LEFT,           KC_RGHT,                    xxxx,              KC_HOME,           KC_PGDN,           KC_PGUP,           KC_END,            \
-U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_BSPC,           KC_ENT,           KC_DEL,            U_NP,              U_NP
+U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_BSPC,           KC_ENT,            KC_DEL,            U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE \
 DM_REC1,           DM_PLY1,           DM_REC2,           DM_PLY2,           DM_RSTP,                    KC_WWW_BACK,       KC_WWW_FORWARD,    xxxx,              xxxx,              JIGGLE,             \
@@ -56,7 +56,7 @@ U_NP,              U_NP,              KC_DOT,            KC_0,              KC_M
 // layers for symbols. LEFTMOST RIGHT THUMB
 // remove:  equal/+,  parentheses(?)
 #define MIRYOKU_ALTERNATIVES_SYM \
-KC_GRAVE,          KC_AMPR,           KC_LCBR,           KC_LBRC,           KC_LPRN,                    KC_RPRN,           KC_RBRC,           KC_RCBR,           KC_KP_ASTERISK,    xxxx,               \
+KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LEFT_BRACKET,   KC_LCBR,           KC_RCBR,          KC_RIGHT_BRACKET,   KC_DEL,               \
 KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,                    KC_DLR,            KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
 KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_POUND,         CCY_EURO,          CCY_YEN,           KC_ALGR,           TD(U_TD_U_SYM),              \
 U_NP,              U_NP,              xxxx,              KC_RPRN,           KC_UNDS,                    KC_BSPC,           xxxx,              xxxx,              U_NP,              U_NP
