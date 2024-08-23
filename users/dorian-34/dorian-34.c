@@ -113,7 +113,6 @@ char *alt_codes[][2] = {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 bool leftmod_pressed(void);
 bool rightmod_pressed(void);
 
@@ -149,7 +148,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case U_GRAVE:
             case U_CIRC:
             case E_TREMA:
-            case I_TREMA: 
+            case I_TREMA:
             case U_TREMA: {
                 uint16_t index = keycode - CCY_POUND; // MAKES A REFERENCE TO THE FIRST CCYCODE
                 uint8_t  shift = get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
@@ -166,8 +165,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
         }
     }
-
-
 
     switch (keycode) {
         // disables the mod keys on the other side of the keyboard when Shift is pressed.
@@ -223,10 +220,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
         }
 
-
-
-
-
         case RSFT_T(KC_N): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
@@ -240,7 +233,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
         }
 
-
         case RCTL_T(KC_E): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
@@ -253,7 +245,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         }
-        
+
         case RALT_T(KC_I): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
@@ -266,7 +258,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         }
-        
+
         case RGUI_T(KC_O): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
@@ -279,9 +271,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         }
-
-
-
     }
 
     // MOUSE JIGGLE
@@ -403,9 +392,11 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
     /* Disable combo `SOME_COMBO` on layer `_LAYER_A` */
 
     switch (index) {
-        case game_00:
+
+        // Note: because these heycodes are defined in the COMBO layer, the layer of the keycode returns (via layer_state_is() ) is 0 all the time
         case game_01:
         case game_02:
+        case game_03:
         case game_04:
         case game_05:
         case game_p:
@@ -413,9 +404,8 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
         case game_bootloader:
         case game_thumb_base_left:
         case game_thumb_base_right:
-        case game_03:
 
-            if (layer_state_is(U_GAME)) {
+             if (default_layer_state == (1 << U_GAME) ) { // default_layer_state is defined in    qmk_firmware\quantum\action_layer.c   l between 1 shifted to the power 9 is 2^9, which is 512
                 return true;
             } else {
                 return false;
@@ -423,7 +413,7 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
 
         default:
 
-            if (layer_state_is(U_GAME)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
+            if (default_layer_state == (1 << U_GAME) ) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
                 return false;
             } else {
                 return true;
