@@ -15,6 +15,9 @@ enum custom_keycodes {
     O_CIRC,
     U_GRAVE,
     U_CIRC,
+    E_TREMA,
+    I_TREMA,
+    U_TREMA,
     JIGGLE,
 };
 
@@ -32,6 +35,10 @@ enum custom_keycodes {
 // ô 0244
 // ù 0249
 // û 0251
+
+// ë 0235
+// ï 0239
+// ü 0252
 
 char *alt_codes[][2] = {
     {
@@ -86,6 +93,18 @@ char *alt_codes[][2] = {
         SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_5) SS_TAP(X_KP_1)), // Alt+0251 → û
         SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_1) SS_TAP(X_KP_9)), // Alt+0219 → Û
     },
+    {
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_5)), // Alt+0235 → ë
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_0) SS_TAP(X_KP_3)), // Alt+0203 → Ë
+    },
+    {
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_9)), // Alt+0239 → ï
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_0) SS_TAP(X_KP_7)), // Alt+0207 → Ï
+    },
+    {
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_5) SS_TAP(X_KP_2)), // Alt+0252 → ü
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_2) SS_TAP(X_KP_0)), // Alt+0220 → Û
+    },
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,7 +147,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case I_CIRC:
             case O_CIRC:
             case U_GRAVE:
-            case U_CIRC: {
+            case U_CIRC:
+            case E_TREMA:
+            case I_TREMA: 
+            case U_TREMA: {
                 uint16_t index = keycode - CCY_POUND; // MAKES A REFERENCE TO THE FIRST CCYCODE
                 uint8_t  shift = get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
 
@@ -329,8 +351,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         case thum_mouse:
         case thum_media:
         case thum_num:
-        case game_thum_base_left:
-        case game_thum_base_right:
+        case game_thumb_base_left:
+        case game_thumb_base_right:
             return 200;
 
         default:
@@ -384,16 +406,16 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
         case game_00:
         case game_01:
         case game_02:
-        case game_03:
         case game_04:
         case game_05:
         case game_p:
         case game_n:
         case game_bootloader:
-        case game_thum_base_left:
-        case game_thum_base_right:
+        case game_thumb_base_left:
+        case game_thumb_base_right:
+        case game_03:
 
-            if (layer_state_is(U_TAP)) {
+            if (layer_state_is(U_GAME)) {
                 return true;
             } else {
                 return false;
@@ -401,7 +423,7 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
 
         default:
 
-            if (layer_state_is(U_TAP)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
+            if (layer_state_is(U_GAME)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
                 return false;
             } else {
                 return true;

@@ -174,22 +174,29 @@
 #if !defined(MIRYOKU_LAYERMAPPING_NUMPAD)
   #define MIRYOKU_LAYERMAPPING_NUMPAD MIRYOKU_MAPPING
 #endif
+
+
+#if !defined(MIRYOKU_LAYERMAPPING_GAME)
+  #define MIRYOKU_LAYERMAPPING_GAME MIRYOKU_MAPPING
+#endif
+
+
 ///////////////////////////////////////////////////////
 
 
 #if !defined (MIRYOKU_LAYER_LIST)
-
-#define MIRYOKU_LAYER_LIST \
-MIRYOKU_X(BASE,   "Base") \
-MIRYOKU_X(EXTRA,  "Extra") \
-MIRYOKU_X(NAV,    "Nav") \
-MIRYOKU_X(MOUSE,  "Mouse") \
-MIRYOKU_X(MEDIA,  "Media") \
-MIRYOKU_X(NUM,    "Num") \
-MIRYOKU_X(SYM,    "Sym") \
-MIRYOKU_X(TAP,    "Tap") \
-MIRYOKU_X(FUN,    "Fun") \
-MIRYOKU_X(NUMPAD,  "Numpad") 
+  #define MIRYOKU_LAYER_LIST \
+    MIRYOKU_X(BASE,   "Base") \
+    MIRYOKU_X(EXTRA,  "Extra") \
+    MIRYOKU_X(NAV,    "Nav") \
+    MIRYOKU_X(MOUSE,  "Mouse") \
+    MIRYOKU_X(MEDIA,  "Media") \
+    MIRYOKU_X(NUM,    "Num") \
+    MIRYOKU_X(SYM,    "Sym") \
+    MIRYOKU_X(FUN,    "Fun") \
+    MIRYOKU_X(NUMPAD, "Numpad") \
+    MIRYOKU_X(GAME,   "Game") 
+        // MIRYOKU_X(TAP,    "Tap")
 #endif
 
 
