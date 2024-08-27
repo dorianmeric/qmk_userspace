@@ -58,5 +58,6 @@ SUBS( combo_bps,    "bps",            KC_B,          KC_P,           LCTL_T(KC_S
 //SUBS( combo_regards,  "Regards,\nDorian",           KC_P,              KC_B        )   
 //SUBS( combo_thanks,  "Thanks,\nDorian",             KC_F,              KC_P        )     
 
-SUBS( combo_email1,  "d.meric@gmail.com",             KC_Q,              KC_B        )   
-SUBS( combo_email2,  "saloute@gmail.com",             KC_W,              KC_P        )     
+SUBS( combo_email1,  "d.meric@gmail.com",                   KC_Q,              KC_B        )   
+SUBS( combo_email2,  "saloute@gmail.com",                   KC_Q,              KC_P        )     
+SUBS( combo_email3,  "dorian.meric@mufgsecurities.com",     KC_Q,              KC_F        )   
