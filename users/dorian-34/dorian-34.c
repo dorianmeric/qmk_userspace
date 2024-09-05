@@ -246,7 +246,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
         }
 
-        case RALT_T(KC_I): {
+        case LALT_T(KC_I): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
                     register_code(KC_I);
@@ -257,6 +257,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 return true;
             }
+        }
         }
 
         case RGUI_T(KC_O): {
@@ -322,7 +323,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //         switch (keycode) {
 //             case RSFT_T(KC_N): return KC_N;
 //             case RCTL_T(KC_E): return KC_E;
-//             case RALT_T(KC_I): return KC_I;
+//             case LALT_T(KC_I): return KC_I;
 //             case RGUI_T(KC_O): return KC_O;
 //         }
 //     }
@@ -360,7 +361,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LCTL_T(KC_S): // Ctrl left
         case RCTL_T(KC_E): // Ctrl right
         case LALT_T(KC_R): // alt left
-        case RALT_T(KC_I): // alt right
+        case LALT_T(KC_I): // alt right
             return 200;
 
         case LSFT_T(KC_T): // Shift left
@@ -451,3 +452,4 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 //             return true; // otherwise the keys should tap
 //     }
 // }
+
