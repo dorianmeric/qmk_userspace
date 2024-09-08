@@ -37,7 +37,7 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 
 #define MIRYOKU_ALTERNATIVES_MEDIA \
 A_GRAVE,           E_GRAVE,           I_CIRC,            U_CIRC,            I_TREMA,                   RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,           \
-A_CIRC,            E_AIGU,            O_CIRC,            KC_LSFT,           U_TREMA,                    OU_AUTO,          KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
+A_CIRC,            E_AIGU,            O_CIRC,            KC_LSFT,           U_TREMA,                    OU_AUTO,     KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
 C_CEDILLE,         E_CIRC,            U_GRAVE,           E_TREMA,      KC_MEDIA_PLAY_PAUSE,             xxxx,             xxxx,             xxxx,              KC_CAPS_LOCK,        KC_INS,              \
 U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_MUTE,       KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,     U_NP,              U_NP
 

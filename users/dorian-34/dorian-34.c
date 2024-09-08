@@ -118,10 +118,12 @@ bool rightmod_pressed(void);
 
 // returns whether or not some nods are being held on the right nahd (or left hand)
 bool leftmod_pressed() {
-    return ((get_mods() & MOD_BIT(KC_LGUI)) == MOD_BIT(KC_LGUI)) || ((get_mods() & MOD_BIT(KC_LALT)) == MOD_BIT(KC_LALT)) || ((get_mods() & MOD_BIT(KC_LCTL)) == MOD_BIT(KC_LCTL)) || ((get_mods() & MOD_BIT(KC_LSFT)) == MOD_BIT(KC_LSFT));
+    // return ((get_mods() & MOD_BIT(KC_LGUI)) == MOD_BIT(KC_LGUI)) || ((get_mods() & MOD_BIT(KC_LALT)) == MOD_BIT(KC_LALT)) || ((get_mods() & MOD_BIT(KC_LCTL)) == MOD_BIT(KC_LCTL)) || ((get_mods() & MOD_BIT(KC_LSFT)) == MOD_BIT(KC_LSFT));
+    return ((get_mods() & MOD_BIT(KC_LGUI)) == MOD_BIT(KC_LGUI)) || ((get_mods() & MOD_BIT(KC_LCTL)) == MOD_BIT(KC_LCTL)) || ((get_mods() & MOD_BIT(KC_LSFT)) == MOD_BIT(KC_LSFT)); // removed Alt as it's the same on both sides so I don't want to disable anything with just alt
 }
 bool rightmod_pressed() {
-    return ((get_mods() & MOD_BIT(KC_RGUI)) == MOD_BIT(KC_RGUI)) || ((get_mods() & MOD_BIT(KC_RALT)) == MOD_BIT(KC_RALT)) || ((get_mods() & MOD_BIT(KC_RCTL)) == MOD_BIT(KC_RCTL)) || ((get_mods() & MOD_BIT(KC_RSFT)) == MOD_BIT(KC_RSFT));
+    // return ((get_mods() & MOD_BIT(KC_RGUI)) == MOD_BIT(KC_RGUI)) || ((get_mods() & MOD_BIT(KC_RALT)) == MOD_BIT(KC_RALT)) || ((get_mods() & MOD_BIT(KC_RCTL)) == MOD_BIT(KC_RCTL)) || ((get_mods() & MOD_BIT(KC_RSFT)) == MOD_BIT(KC_RSFT));
+    return ((get_mods() & MOD_BIT(KC_RGUI)) == MOD_BIT(KC_RGUI)) || ((get_mods() & MOD_BIT(KC_RCTL)) == MOD_BIT(KC_RCTL)) || ((get_mods() & MOD_BIT(KC_RSFT)) == MOD_BIT(KC_RSFT)); // removed Alt as it's the same on both sides so I don't want to disable anything with just alt
 }
 
 // https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md
@@ -258,7 +260,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         }
-        }
 
         case RGUI_T(KC_O): {
             if (leftmod_pressed()) {
@@ -393,7 +394,6 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
     /* Disable combo `SOME_COMBO` on layer `_LAYER_A` */
 
     switch (index) {
-
         // Note: because these heycodes are defined in the COMBO layer, the layer of the keycode returns (via layer_state_is() ) is 0 all the time
         case game_01:
         case game_02:
@@ -406,7 +406,7 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
         case game_thumb_base_left:
         case game_thumb_base_right:
 
-             if (default_layer_state == (1 << U_GAME) ) { // default_layer_state is defined in    qmk_firmware\quantum\action_layer.c   l between 1 shifted to the power 9 is 2^9, which is 512
+            if (default_layer_state == (1 << U_GAME)) { // default_layer_state is defined in    qmk_firmware\quantum\action_layer.c   l between 1 shifted to the power 9 is 2^9, which is 512
                 return true;
             } else {
                 return false;
@@ -414,7 +414,7 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
 
         default:
 
-            if (default_layer_state == (1 << U_GAME) ) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
+            if (default_layer_state == (1 << U_GAME)) { // if we are here the combo is not ome of the "game" ones, and therefore should not activate while gaming
                 return false;
             } else {
                 return true;
@@ -452,4 +452,3 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 //             return true; // otherwise the keys should tap
 //     }
 // }
-
