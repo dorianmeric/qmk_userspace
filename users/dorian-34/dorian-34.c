@@ -169,14 +169,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-        // disables the mod keys on the other side of the keyboard when Shift is pressed.
+        // disables the mod keys on the other side of the keyboard when Ctrl or Shift is held.
         case LSFT_T(KC_T): {
             if (rightmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_T);
-                } else {
-                    unregister_code(KC_T);
-                }
+                    tap_code(KC_T);
+                } 
                 return false;
             } else {
                 return true;
@@ -186,10 +184,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LGUI_T(KC_A): {
             if (rightmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_A);
-                } else {
-                    unregister_code(KC_A);
-                }
+                    tap_code(KC_A);
+                } 
                 return false;
             } else {
                 return true;
@@ -199,10 +195,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LALT_T(KC_R): {
             if (rightmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_R);
-                } else {
-                    unregister_code(KC_R);
-                }
+                    tap_code(KC_R);
+                } 
                 return false;
             } else {
                 return true;
@@ -212,10 +206,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LCTL_T(KC_S): {
             if (rightmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_S);
-                } else {
-                    unregister_code(KC_S);
-                }
+                    tap_code(KC_S);
+                } 
                 return false;
             } else {
                 return true;
@@ -225,10 +217,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RSFT_T(KC_N): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_N);
-                } else {
-                    unregister_code(KC_N);
-                }
+                    tap_code(KC_N);
+                } 
                 return false;
             } else {
                 return true;
@@ -238,9 +228,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RCTL_T(KC_E): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_E);
-                } else {
-                    unregister_code(KC_E);
+                    tap_code(KC_E);
                 }
                 return false;
             } else {
@@ -251,10 +239,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LALT_T(KC_I): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_I);
-                } else {
-                    unregister_code(KC_I);
-                }
+                    tap_code(KC_I);
+                } 
                 return false;
             } else {
                 return true;
@@ -264,10 +250,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RGUI_T(KC_O): {
             if (leftmod_pressed()) {
                 if (record->event.pressed) {
-                    register_code(KC_O);
-                } else {
-                    unregister_code(KC_O);
-                }
+                    tap_code(KC_O);
+                } 
                 return false;
             } else {
                 return true;
@@ -347,7 +331,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
             return 200;
 
         default:
-            return 50; // COMBO_TERM;
+            return 30; // COMBO_TERM;
     }
 }
 
