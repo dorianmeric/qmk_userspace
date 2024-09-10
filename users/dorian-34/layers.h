@@ -65,7 +65,7 @@ U_NP,              U_NP,              xxxx,              KC_RPRN,           KC_U
 #define MIRYOKU_ALTERNATIVES_FUN \
 KC_F10,            KC_F7,             KC_F8,             KC_F9,             KC_PSCR,                    xxxx,              xxxx,              xxxx,             DF(U_EXTRA),        TD(U_TD_BOOT),            \
 KC_F11,            KC_F4,             KC_F5,             KC_F6,             KC_SCRL,                    xxxx,              KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
-KC_F12,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,                    xxxx,              TD(U_TD_U_FUN),    KC_ALGR,           DF(U_GAME),         DF(U_BASE),              \
+KC_F12,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,                    KC_F2,             TD(U_TD_U_FUN),    KC_ALGR,           DF(U_GAME),         DF(U_BASE),              \
 U_NP,              U_NP,              xxxx,              KC_TAB,            KC_SPC,                     xxxx,              xxxx,              xxxx,              U_NP,              U_NP
 
 
@@ -82,7 +82,7 @@ U_NP,              U_NP,              KC_ESC,            KC_LALT,           KC_S
 
 #define MIRYOKU_LAYER_NUMPAD \
 KC_KP_SLASH,      KC_KP_7,           KC_KP_8,           KC_KP_9,            KC_KP_ASTERISK,             xxxx,               xxxx,               xxxx,               xxxx,               xxxx,             \
-xxxx,             KC_KP_4,           KC_KP_5,           KC_KP_6,            KC_KP_PLUS,                 xxxx,               KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
+xxxx,             KC_KP_4,           KC_KP_5,           KC_KP_6,            KC_KP_PLUS,                 xxxx,               KC_RSFT,           KC_RCTL,             KC_LALT,           KC_RGUI,           \
 KC_KP_DOT,        KC_KP_1,           KC_KP_2,           KC_KP_3,            KC_KP_MINUS,                xxxx,               xxxx,               xxxx,               KC_ALGR,           DF(U_BASE),         \
 U_NP,              U_NP,           xxxx,                KC_KP_0,            KC_KP_ENTER,                KC_BSPC,            xxxx,               xxxx,               U_NP,              U_NP
 
