@@ -4,8 +4,7 @@ EXTRAKEY_ENABLE = yes
 AUTO_SHIFT_ENABLE = no
 TAP_DANCE_ENABLE = yes
 CAPS_WORD_ENABLE = yes # https://github.com/qmk/qmk_firmware/blob/master/docs/feature_caps_word.md
-KEY_OVERRIDE_ENABLE = yes
-
+KEY_OVERRIDE_ENABLE = no # used to be "yes"
 MOUSE_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
 

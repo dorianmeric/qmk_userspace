@@ -436,3 +436,19 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 //             return true; // otherwise the keys should tap
 //     }
 // }
+
+
+/*
+ * Key overrides allow you to send a different key-modifier combination or perform a custom action when a certain modifier-key combination is pressed.
+ * For example, you may configure a key override to send the delete key when shift + backspace are pressed together, or that your volume keys become screen brightness keys when holding ctrl. The possibilities are quite vast and the documentation contains a few examples for inspiration.
+ *
+ * See the documentation and examples here: https://docs.qmk.fm/#/feature_key_overrides
+*/
+// can disable by removing KEY_OVERRIDE_ENABLE
+// const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+
+// // This globally defines all key overrides to be used
+// const key_override_t **key_overrides = (const key_override_t *[]){
+// 	&delete_key_override,
+// 	NULL // Null terminate the array of overrides!
+// };

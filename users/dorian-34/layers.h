@@ -49,7 +49,7 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 // parentheses (open and close), e, dot, +, -, *, /, circ, =, comma(?), f4, f2(maybe)
 #define MIRYOKU_ALTERNATIVES_NUM \
 KC_LPRN,           KC_7,              KC_8,              KC_9,              KC_RPRN,                    KC_CIRC,           KC_KP_PLUS,        KC_KP_MINUS,       KC_KP_ASTERISK,    KC_KP_SLASH,              \
-KC_COMM,           KC_4,              KC_5,              KC_6,              KC_EQL,                     KC_E,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
+KC_COMM,           KC_4,              KC_5,              KC_6,              KC_EQL,                     KC_E,              KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
 KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_F4,             KC_DOT,            MO(U_NUMPAD),  LM(U_NUMPAD,MOD_RALT), TD(U_TD_U_NUM),              \
 U_NP,              U_NP,              KC_DOT,            KC_0,              KC_MINS,                    KC_BSPC,           xxxx,              xxxx,              U_NP,              U_NP
 
@@ -57,14 +57,14 @@ U_NP,              U_NP,              KC_DOT,            KC_0,              KC_M
 // remove:  equal/+,  parentheses(?)
 #define MIRYOKU_ALTERNATIVES_SYM \
 KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LEFT_BRACKET,   KC_LCBR,           KC_RCBR,          KC_RIGHT_BRACKET,   KC_DEL,               \
-KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,                    KC_DLR,            KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
+KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,                    KC_DLR,            KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
 KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_POUND,         CCY_EURO,          CCY_YEN,           KC_ALGR,           TD(U_TD_U_SYM),              \
 U_NP,              U_NP,              xxxx,              KC_RPRN,           KC_UNDS,                    KC_BSPC,           xxxx,              xxxx,              U_NP,              U_NP
 
 // BOTH RIGHT
 #define MIRYOKU_ALTERNATIVES_FUN \
 KC_F10,            KC_F7,             KC_F8,             KC_F9,             KC_PSCR,                    xxxx,              xxxx,              xxxx,             DF(U_EXTRA),        TD(U_TD_BOOT),            \
-KC_F11,            KC_F4,             KC_F5,             KC_F6,             KC_SCRL,                    xxxx,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
+KC_F11,            KC_F4,             KC_F5,             KC_F6,             KC_SCRL,                    xxxx,              KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
 KC_F12,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,                    xxxx,              TD(U_TD_U_FUN),    KC_ALGR,           DF(U_GAME),         DF(U_BASE),              \
 U_NP,              U_NP,              xxxx,              KC_TAB,            KC_SPC,                     xxxx,              xxxx,              xxxx,              U_NP,              U_NP
 
@@ -72,8 +72,8 @@ U_NP,              U_NP,              xxxx,              KC_TAB,            KC_S
 
 #define MIRYOKU_LAYER_GAME \
 KC_TAB,            KC_Q,              KC_W,              KC_E,              KC_R,                       KC_T,               KC_Y,              KC_U,              KC_I,              KC_O,                         \
-KC_LSFT,           KC_A,              KC_S,              KC_D,              KC_F,                       KC_G,               KC_H,              KC_J,              KC_K,              KC_L,                       \
-KC_LCTL,           KC_Z,              KC_X,              KC_C,              KC_V,                       KC_B,               KC_N,              KC_M,              A(KC_TAB),         DF(U_BASE),           \
+KC_LSFT,           KC_A,              KC_S,              KC_D,              KC_F,                       KC_G,               KC_H,              KC_J,              KC_K,              A(KC_TAB),                       \
+KC_LCTL,           KC_Z,              KC_X,              KC_C,              KC_V,                       KC_B,               KC_N,              KC_M,              DF(U_GAME),        DF(U_BASE),            \
 U_NP,              U_NP,              KC_ESC,            KC_LALT,           KC_SPC,                     KC_BSPC,            KC_ENT,            KC_DEL,            U_NP,              U_NP
 
 
@@ -82,7 +82,7 @@ U_NP,              U_NP,              KC_ESC,            KC_LALT,           KC_S
 
 #define MIRYOKU_LAYER_NUMPAD \
 KC_KP_SLASH,      KC_KP_7,           KC_KP_8,           KC_KP_9,            KC_KP_ASTERISK,             xxxx,               xxxx,               xxxx,               xxxx,               xxxx,             \
-xxxx,             KC_KP_4,           KC_KP_5,           KC_KP_6,            KC_KP_PLUS,                 xxxx,               KC_LSFT,            KC_LCTL,            KC_LALT,           KC_LGUI,           \
+xxxx,             KC_KP_4,           KC_KP_5,           KC_KP_6,            KC_KP_PLUS,                 xxxx,               KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
 KC_KP_DOT,        KC_KP_1,           KC_KP_2,           KC_KP_3,            KC_KP_MINUS,                xxxx,               xxxx,               xxxx,               KC_ALGR,           DF(U_BASE),         \
 U_NP,              U_NP,           xxxx,                KC_KP_0,            KC_KP_ENTER,                KC_BSPC,            xxxx,               xxxx,               U_NP,              U_NP
 
