@@ -63,6 +63,8 @@ SUBS( combo_text1,      "MUFG",                             KC_V,              K
 SUBS( combo_text2,      "MUSE",                             KC_V,              KC_M       )   
 // SUBS( combo_text3,  "MUBK",                                 KC_V,              KC_K       )   
 SUBS( combo_text4,      "MUFG Securities EMEA Plc",         KC_V,              J_KEY      )   
+SUBS( combo_text5,      "SOFR",                             KC_V,              KC_L       )
+SUBS( combo_text6,      "6mE",                              KC_V,              KC_H       )
 
 SUBS( combo_regards,    "Regards,\nDorian",                 KC_Z,              KC_V        )   
 SUBS( combo_thanks,     "Thanks,\nDorian",                  KC_Z,              KC_D        )   
