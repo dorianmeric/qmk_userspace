@@ -19,6 +19,8 @@ enum custom_keycodes {
     I_TREMA,
     U_TREMA,
     JIGGLE,
+    // SS_MUFG,
+    // SS_MUSE
 };
 
 // £ 0163
@@ -165,6 +167,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
                 return false; // Skip all further processing of this key
             }
+
+
+            // case SS_MUFG:
+            //     if (record->event.pressed) {
+            //         SEND_STRING("MUBK");
+            //     }
+            //     return false;
+            // case SS_MUSE:
+            //     if (record->event.pressed) {
+            //         SEND_STRING("MUSE");
+            //     }
+            //     return false;
+
         }
     }
 
