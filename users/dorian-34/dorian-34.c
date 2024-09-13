@@ -515,6 +515,7 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 
 
 // when both inner theumbs are held, activates the ALLCAPS layer
+// https://github.com/qmk/qmk_firmware/blob/master/docs/ref_functions.md#update_tri_layer_statestate-x-y-z
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, U_NAV,    U_NUM,  U_ALLCAPS);  // inner thumbs -> allcaps
     state = update_tri_layer_state(state, U_MOUSE,  U_SYM,  U_SNIPPETS); // outer thumbsc -> snippets
