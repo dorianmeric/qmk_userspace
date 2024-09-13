@@ -3,12 +3,19 @@
 #define xxxx  KC_NO // present but not available for use
 #define Y_KEY MT(MOD_RCTL | MOD_RALT | MOD_RSFT,KC_Y)
 #define J_KEY MT(MOD_RCTL | MOD_RALT | MOD_RSFT,KC_J)
+#define RIGHT_THUMB LT(U_NUM,KC_BSPC)
+#define LEFT_THUMB  LT(U_NAV,KC_SPC)
+
+#define TH1 LT(U_MOUSE,KC_TAB)
+#define TH2 LT(U_NAV,KC_SPC),          
+#define TH3 LT(U_NUM,KC_BSPC),
+#define TH4 LT(U_SYM,KC_ENT)
 
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH \
 KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,              KC_SLSH,           \
 LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,                       KC_M,              RSFT_T(KC_N),      RCTL_T(KC_E),      LALT_T(KC_I),      RGUI_T(KC_O),      \
-KC_Z,              ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,                       KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_QUOT,             \
+KC_Z,              ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,                       KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_QUOT,            \
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_MOUSE,KC_TAB), LT(U_NAV,KC_SPC),          LT(U_NUM,KC_BSPC), LT(U_SYM,KC_ENT), LT(U_FUN,KC_DEL),   U_NP,              U_NP
 
 
@@ -24,14 +31,14 @@ U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_MOUSE,KC_TAB), LT(
 // Undo = Ctrl+Z    
 #define MIRYOKU_ALTERNATIVES_NAV \
 KC_HOME,           LCTL(KC_0),        KC_F5,             KC_END,            KC_PGUP,                    KC_WWW_BACK,       KC_WWW_FORWARD,    xxxx,              xxxx,              xxxx,             \
-KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           KC_PGDN,                  QK_CAPS_WORD_TOGGLE, KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           \
+KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           KC_PGDN,                    xxxx,              KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           \
 KC_END,            A(KC_F4),          KC_F2,             KC_LEFT,           KC_RGHT,                    xxxx,              KC_HOME,           KC_PGDN,           KC_PGUP,           KC_END,            \
-U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_BSPC,           KC_ENT,            KC_DEL,            U_NP,              U_NP
+U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       LT(U_NUM,KC_BSPC), KC_ENT,            KC_DEL,            U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE \
 DM_REC1,           DM_PLY1,           DM_REC2,           DM_PLY2,           DM_RSTP,                    KC_WWW_BACK,       KC_WWW_FORWARD,    xxxx,              xxxx,              JIGGLE,             \
-KC_LGUI,           KC_LALT,           KC_LCTL,           C(KC_S),           LSFT(KC_F9),             QK_CAPS_WORD_TOGGLE,  KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
-TD(U_TD_U_MOUSE),  RSFT(KC_HOME),     RCTL(KC_BSPC),     RCTL(KC_DEL),      RSFT(KC_END),               xxxx,           KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
+KC_LGUI,           KC_LALT,           KC_LCTL,           C(KC_S),           LSFT(KC_F9),                xxxx,              KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
+TD(U_TD_U_MOUSE),  RSFT(KC_HOME),     xxxx,        QK_CAPS_WORD_TOGGLE,     RSFT(KC_END),               xxxx,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
 U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_BTN1,           KC_BTN2,           KC_BTN3,           U_NP,              U_NP
 
 
@@ -51,7 +58,7 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 KC_LPRN,           KC_7,              KC_8,              KC_9,              KC_RPRN,                    KC_CIRC,           KC_KP_PLUS,        KC_KP_MINUS,       KC_KP_ASTERISK,    KC_KP_SLASH,              \
 KC_COMM,           KC_4,              KC_5,              KC_6,              KC_EQL,                     KC_E,              KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
 KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_F4,             KC_DOT,            MO(U_NUMPAD),  LM(U_NUMPAD,MOD_RALT), TD(U_TD_U_NUM),              \
-U_NP,              U_NP,              KC_DOT,            KC_0,              KC_MINS,                    KC_BSPC,           xxxx,              xxxx,              U_NP,              U_NP
+U_NP,              U_NP,              KC_DOT,            KC_0,              LT(U_NAV,KC_SPC),           xxxx,              xxxx,              xxxx,              U_NP,              U_NP
 
 // layers for symbols. LEFTMOST RIGHT THUMB
 // remove:  equal/+,  parentheses(?)
@@ -87,3 +94,9 @@ KC_KP_DOT,        KC_KP_1,           KC_KP_2,           KC_KP_3,            KC_K
 U_NP,              U_NP,           xxxx,                KC_KP_0,            KC_KP_ENTER,                KC_BSPC,            xxxx,               xxxx,               U_NP,              U_NP
 
 
+
+#define MIRYOKU_LAYER_ALLCAPS \
+S(KC_Q),           S(KC_W),         S(KC_F),            S(KC_P),            S(KC_B),                    S(KC_J),            S(KC_L),            S(KC_U),           S(KC_Y),             S(KC_SLSH),           \
+S(KC_A),           S(KC_R),         S(KC_S),            S(KC_T),            S(KC_G),                    S(KC_M),            S(KC_N),            S(KC_E),           S(KC_I),             S(KC_O),      \
+S(KC_Z),           S(KC_X),         S(KC_C),            S(KC_D),            S(KC_V),                    S(KC_K),            S(KC_H),            S(KC_COMM),        S(KC_DOT),           S(KC_QUOT),   \
+U_NP,              U_NP,            xxxx,               xxxx,               xxxx,                       xxxx,               xxxx,               xxxx,              U_NP,                U_NP

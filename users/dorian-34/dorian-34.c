@@ -128,6 +128,7 @@ bool rightmod_pressed() {
     return ((get_mods() & MOD_BIT(KC_RGUI)) == MOD_BIT(KC_RGUI)) || ((get_mods() & MOD_BIT(KC_RCTL)) == MOD_BIT(KC_RCTL)) || ((get_mods() & MOD_BIT(KC_RSFT)) == MOD_BIT(KC_RSFT)); // removed Alt as it's the same on both sides so I don't want to disable anything with just alt
 }
 
+
 // https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md
 // If these functions return true QMK will process the keycodes as usual. That can be handy for extending the functionality of a key rather than replacing it. If these functions return false QMK will skip the normal key handling, and it will be up to you to send any key up or down events that are required.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -184,6 +185,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
+
+
         // disables the mod keys on the other side of the keyboard when Ctrl or Shift is held.
         case LSFT_T(KC_T): {
             if (rightmod_pressed()) {
@@ -467,3 +470,9 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 // 	&delete_key_override,
 // 	NULL // Null terminate the array of overrides!
 // };
+
+
+// when both inner theumbs are held, activates the ALLCAPS layer
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, U_NAV, U_NUM, U_ALLCAPS);
+}
