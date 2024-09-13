@@ -19,6 +19,11 @@ enum custom_keycodes {
     I_TREMA,
     U_TREMA,
     JIGGLE,
+
+    S_Q,                S_W,            S_F,            S_P,            S_B,                    S_J,            S_L,            S_U,           S_Y,             S_SLSH,           
+    S_A,                S_R,            S_S,            S_T,            S_G,                    S_M,            S_N,            S_E,           S_I,             S_O,      
+    S_Z,                S_X,            S_C,            S_D,            S_V,                    S_K,            S_H,            S_COMM,        S_DOT,           S_QUOT
+
     // SS_MUFG,
     // SS_MUSE
 };
@@ -170,16 +175,44 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
 
 
-            // case SS_MUFG:
-            //     if (record->event.pressed) {
-            //         SEND_STRING("MUBK");
-            //     }
-            //     return false;
-            // case SS_MUSE:
-            //     if (record->event.pressed) {
-            //         SEND_STRING("MUSE");
-            //     }
-            //     return false;
+            // Snippets
+            // left hand
+            case S_Q:   SEND_STRING("Dorian");  return false;
+            case S_W:   SEND_STRING("Meric");  return false;
+            case S_F:   SEND_STRING("Dorian Meric");  return false;
+            case S_P:   SEND_STRING("");  return false;
+            case S_B:   SEND_STRING("0852");  return false;
+
+            case S_A:   SEND_STRING("6 Ballingdon Road");  return false;
+            case S_R:   SEND_STRING("London");  return false;
+            case S_S:   SEND_STRING("SW11 6AJ");  return false;
+            case S_T:   SEND_STRING("07556536531");  return false;
+            case S_G:   SEND_STRING("\n\nRegards,\nDorian"); return false;
+
+            case S_Z:   SEND_STRING("");  return false;
+            case S_X:   SEND_STRING("dorian.meric@mufgsecurities.com");  return false;
+            case S_C:   SEND_STRING("saloute@gmail.com");  return false;
+            case S_D:   SEND_STRING("d.meric@gmail.com");  return false;
+            case S_V:   SEND_STRING("\n\nThanks,\nDorian"); return false;
+            
+            // right hand
+            case S_J:   SEND_STRING("MUSE");  return false;
+            case S_L:   SEND_STRING("SOFR");  return false;
+            case S_U:   SEND_STRING("Virtuo Finance SARL");  return false;
+            case S_Y:   SEND_STRING("Virtuo2 Finance SARL");  return false;
+            case S_SLSH:SEND_STRING("MUFG Securities EMEA Plc");  return false;
+
+            case S_M:   SEND_STRING("MUFG");  return false;
+            case S_N:   SEND_STRING("");  return false;
+            case S_E:   SEND_STRING("Global Blended Finance (GBF)");  return false;
+            case S_I:   SEND_STRING("");  return false;
+            case S_O:   SEND_STRING("");  return false;
+
+            case S_K:   SEND_STRING("MUBK");  return false;
+            case S_H:   SEND_STRING("6mE");  return false;
+            case S_COMM:SEND_STRING("");  return false;
+            case S_DOT: SEND_STRING("");  return false;
+            case S_QUOT:SEND_STRING("MUFG Bank, Ltd.");  return false;
 
         }
     }
@@ -380,8 +413,17 @@ bool get_combo_must_press_in_order(uint16_t index, combo_t *combo) {
     switch (index) {
         case combo_io:
         case combo_oi:
-            //      case combo_regards:
-            //      case combo_thanks:
+
+        case combo_email1:
+        case combo_email2:
+        case combo_email3:
+        case combo_text1:
+        case combo_text2:
+        case combo_text3:
+        case combo_text5:
+        case combo_text6:
+        case combo_regards:
+        case combo_thanks:
 
             return true;
 
@@ -474,5 +516,7 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 
 // when both inner theumbs are held, activates the ALLCAPS layer
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, U_NAV, U_NUM, U_ALLCAPS);
+    state = update_tri_layer_state(state, U_NAV,    U_NUM,  U_ALLCAPS);  // inner thumbs -> allcaps
+    state = update_tri_layer_state(state, U_MOUSE,  U_SYM,  U_SNIPPETS); // outer thumbsc -> snippets
+    return state;
 }

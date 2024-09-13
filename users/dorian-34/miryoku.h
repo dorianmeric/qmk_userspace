@@ -182,6 +182,9 @@
 #if !defined(MIRYOKU_LAYERMAPPING_ALLCAPS)
   #define MIRYOKU_LAYERMAPPING_ALLCAPS MIRYOKU_MAPPING
 #endif
+#if !defined(MIRYOKU_LAYERMAPPING_SNIPPETS)
+  #define MIRYOKU_LAYERMAPPING_SNIPPETS MIRYOKU_MAPPING
+#endif
 
 
 ///////////////////////////////////////////////////////
@@ -199,7 +202,8 @@
     MIRYOKU_X(FUN,    "Fun") \
     MIRYOKU_X(NUMPAD, "Numpad") \
     MIRYOKU_X(GAME,   "Game")     \
-    MIRYOKU_X(ALLCAPS, "AllCaps")         // MIRYOKU_X(TAP,    "Tap")
+    MIRYOKU_X(ALLCAPS, "AllCaps")     \
+    MIRYOKU_X(SNIPPETS, "Snippets")       
 #endif
 
 
