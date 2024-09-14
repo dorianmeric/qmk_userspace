@@ -20,6 +20,8 @@ enum custom_keycodes {
     U_TREMA,
     JIGGLE,
 
+    ALT_E_S,
+
     S_Q,                S_W,            S_F,            S_P,            S_B,                    S_J,            S_L,            S_U,           S_Y,             S_SLSH,           
     S_A,                S_R,            S_S,            S_T,            S_G,                    S_M,            S_N,            S_E,           S_I,             S_O,      
     S_Z,                S_X,            S_C,            S_D,            S_V,                    S_K,            S_H,            S_COMM,        S_DOT,           S_QUOT
@@ -136,6 +138,28 @@ bool rightmod_pressed() {
     return ((get_mods() & MOD_BIT(KC_RGUI)) == MOD_BIT(KC_RGUI)) || ((get_mods() & MOD_BIT(KC_RCTL)) == MOD_BIT(KC_RCTL)) || ((get_mods() & MOD_BIT(KC_RSFT)) == MOD_BIT(KC_RSFT)); // removed Alt as it's the same on both sides so I don't want to disable anything with just alt
 }
 
+  // disables the mod keys on the other side of the keyboard when Ctrl or Shift is held.
+bool simple_mod_right(uint16_t keycode, keyrecord_t *record) {
+            if (rightmod_pressed()) {
+                if (record->event.pressed) {
+                    tap_code(keycode);
+                } 
+                return false;
+            } else {
+                return true;
+            }
+}
+
+bool simple_mod_left(uint16_t keycode, keyrecord_t *record) {
+            if (leftmod_pressed()) {
+                if (record->event.pressed) {
+                    tap_code(keycode);
+                } 
+                return false;
+            } else {
+                return true;
+            }
+}
 
 // https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md
 // If these functions return true QMK will process the keycodes as usual. That can be handy for extending the functionality of a key rather than replacing it. If these functions return false QMK will skip the normal key handling, and it will be up to you to send any key up or down events that are required.
@@ -191,6 +215,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
 
 
+            case ALT_E_S: SEND_STRING(SS_LALT(SS_TAP(X_E)) SS_TAP(X_S)); return false; // Alt+e s                 
+
+
             // Snippets
             // left hand
             case S_Q:   SEND_STRING("Dorian");  return false;
@@ -233,97 +260,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
 
+    // disables the mod keys on the other side of the keyboard when Ctrl or Shift is held.
     switch (keycode) {
+        case LSFT_T(KC_T): return simple_mod_right(KC_T, record);
+        case LGUI_T(KC_A): return simple_mod_right(KC_A, record);
+        case LALT_T(KC_R): return simple_mod_right(KC_R, record);
+        case LCTL_T(KC_S): return simple_mod_right(KC_S, record);
 
-
-        // disables the mod keys on the other side of the keyboard when Ctrl or Shift is held.
-        case LSFT_T(KC_T): {
-            if (rightmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_T);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case LGUI_T(KC_A): {
-            if (rightmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_A);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case LALT_T(KC_R): {
-            if (rightmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_R);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case LCTL_T(KC_S): {
-            if (rightmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_S);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case RSFT_T(KC_N): {
-            if (leftmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_N);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case RCTL_T(KC_E): {
-            if (leftmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_E);
-                }
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case LALT_T(KC_I): {
-            if (leftmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_I);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        case RGUI_T(KC_O): {
-            if (leftmod_pressed()) {
-                if (record->event.pressed) {
-                    tap_code(KC_O);
-                } 
-                return false;
-            } else {
-                return true;
-            }
-        }
+        case RSFT_T(KC_N): return simple_mod_left(KC_N, record);
+        case RCTL_T(KC_E): return simple_mod_left(KC_E, record);
+        case LALT_T(KC_I): return simple_mod_left(KC_I, record);
+        case RGUI_T(KC_O): return simple_mod_left(KC_O, record);
     }
 
     // MOUSE JIGGLE
@@ -520,14 +467,17 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
  *
  * See the documentation and examples here: https://docs.qmk.fm/#/feature_key_overrides
 */
-// can disable by removing KEY_OVERRIDE_ENABLE
-// const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+//can disable by removing KEY_OVERRIDE_ENABLE
+const key_override_t delete_key_override =  ko_make_basic(MOD_MASK_SHIFT, TH3,          LT(U_NUM,   KC_DEL));  // actually only does a Del (not able to hold)
+const key_override_t semicolon =            ko_make_basic(MOD_MASK_SHIFT, KC_COLON,     KC_SEMICOLON);
+const key_override_t questionmark =         ko_make_basic(MOD_MASK_SHIFT, KC_QUESTION,  KC_SLSH);
 
-// // This globally defines all key overrides to be used
-// const key_override_t **key_overrides = (const key_override_t *[]){
-// 	&delete_key_override,
-// 	NULL // Null terminate the array of overrides!
-// };
+// This globally defines all key overrides to be used
+const key_override_t *key_overrides[] = {
+	&delete_key_override,
+    &semicolon,
+    &questionmark
+};
 
 
 // when both inner theumbs are held, activates the ALLCAPS layer
@@ -537,3 +487,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, U_MOUSE,  U_SYM,  U_SNIPPETS); // outer thumbsc -> snippets
     return state;
 }
+

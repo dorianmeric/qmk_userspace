@@ -12,7 +12,7 @@
 
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH \
-KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,              KC_SLSH,           \
+KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,              KC_QUESTION,           \
 LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,                       KC_M,              RSFT_T(KC_N),      RCTL_T(KC_E),      LALT_T(KC_I),      RGUI_T(KC_O),      \
 KC_Z,              ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,                       KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_QUOT,            \
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),TH1,               TH2,                        TH3,               TH4,               LT(U_FUN,KC_DEL),   U_NP,              U_NP
@@ -42,10 +42,10 @@ U_NP,              U_NP,              xxxx,              xxxx,              TH2,
 
 
 #define MIRYOKU_ALTERNATIVES_MEDIA \
-A_GRAVE,           E_GRAVE,           I_CIRC,            U_CIRC,            I_TREMA,                   RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,           \
-A_CIRC,            E_AIGU,            O_CIRC,            KC_LSFT,           U_TREMA,                    OU_AUTO,     KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
-C_CEDILLE,         E_CIRC,            U_GRAVE,           E_TREMA,      KC_MEDIA_PLAY_PAUSE,             xxxx,             xxxx,             xxxx,              KC_CAPS_LOCK,        KC_INS,              \
-U_NP,              U_NP,              xxxx,              xxxx,              xxxx,                       KC_MUTE,       KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,     U_NP,              U_NP
+O_CIRC,             U_CIRC,             E_CIRC,           A_CIRC,            I_TREMA,                   RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,           \
+E_TREMA,            U_GRAVE,            E_GRAVE,          KC_LSFT,           I_CIRC,                    OU_AUTO,     KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
+U_TREMA,            C_CEDILLE,          E_AIGU,           A_GRAVE,      KC_MEDIA_PLAY_PAUSE,             xxxx,             xxxx,             xxxx,              KC_CAPS_LOCK,        KC_INS,              \
+U_NP,               U_NP,              xxxx,              xxxx,              xxxx,                       KC_MUTE,       KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,     U_NP,              U_NP
 
 
 
@@ -61,7 +61,7 @@ U_NP,              U_NP,              KC_DOT,            KC_0,              TH2,
 
 // layers for symbols. RIGHTMOST RIGHT THUMB
 #define MIRYOKU_ALTERNATIVES_SYM \
-KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LEFT_BRACKET,   KC_LCBR,           KC_RCBR,          KC_RIGHT_BRACKET,   KC_DEL,               \
+KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LCBR,           KC_RCBR,           KC_LEFT_BRACKET,   KC_RIGHT_BRACKET,   KC_DEL,               \
 KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,                    KC_DLR,            KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
 KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_POUND,         CCY_EURO,          CCY_YEN,           KC_ALGR,           TD(U_TD_U_SYM),              \
 U_NP,              U_NP,              xxxx,              TH1,               TH2,                        TH3,               xxxx,              xxxx,              U_NP,              U_NP
