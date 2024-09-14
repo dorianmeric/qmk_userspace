@@ -42,11 +42,14 @@ U_NP,              U_NP,              xxxx,              xxxx,              TH2,
 
 
 #define MIRYOKU_ALTERNATIVES_MEDIA \
-O_CIRC,             U_CIRC,             E_CIRC,           A_CIRC,            I_TREMA,                   RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,           \
-E_TREMA,            U_GRAVE,            E_GRAVE,          KC_LSFT,           I_CIRC,                    OU_AUTO,     KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,           \
-U_TREMA,            C_CEDILLE,          E_AIGU,           A_GRAVE,      KC_MEDIA_PLAY_PAUSE,             xxxx,             xxxx,             xxxx,              KC_CAPS_LOCK,        KC_INS,              \
-U_NP,               U_NP,              xxxx,              xxxx,              xxxx,                       KC_MUTE,       KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,     U_NP,              U_NP
+xxxx,             E_TREMA,            I_TREMA,           U_TREMA,            xxxx,                      A_GRAVE,           E_AIGU,           E_GRAVE,           E_CIRC,           C_CEDILLE,           \
+KC_INS,           xxxx,               xxxx,              KC_LSFT,           xxxx,                       A_CIRC,     KC_MEDIA_PREV_TRACK,   KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,   KC_MEDIA_NEXT_TRACK,   \
+KC_CAPS_LOCK,     xxxx,               A_GRAVE,            E_AIGU,      KC_MEDIA_PLAY_PAUSE,             O_CIRC,            I_CIRC,           U_CIRC,           U_GRAVE,          xxxx,              \
+U_NP,               U_NP,              xxxx,              xxxx,              xxxx,                      KC_MUTE,       KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,     U_NP,              U_NP
 
+// Keycodes for manipulating the RGB.
+// RGB_TOG,           RGB_MOD,           RGB_HUI,           RGB_SAI,           RGB_VAI,  
+// OU_AUTO // Keyb. output: auto
 
 
 
