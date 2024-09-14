@@ -56,7 +56,7 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 #define MIRYOKU_ALTERNATIVES_NUM \
 KC_LPRN,           KC_7,              KC_8,              KC_9,              KC_RPRN,                    KC_CIRC,           KC_KP_PLUS,        KC_KP_MINUS,       KC_KP_ASTERISK,    KC_KP_SLASH,              \
 KC_COMM,           KC_4,              KC_5,              KC_6,              KC_EQL,                     KC_E,              KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
-KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_F4,             KC_DOT,            MO(U_NUMPAD),  LM(U_NUMPAD,MOD_RALT), TD(U_TD_U_NUM),              \
+KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_F4,             KC_DOT,            MO(U_NUMPAD),  LM(U_NUMPAD,MOD_LALT), TD(U_TD_U_NUM),              \
 U_NP,              U_NP,              KC_DOT,            KC_0,              TH2,                        xxxx,              xxxx,              xxxx,              U_NP,              U_NP
 
 // layers for symbols. RIGHTMOST RIGHT THUMB
@@ -94,10 +94,10 @@ U_NP,              U_NP,           xxxx,                KC_KP_0,            KC_K
 
 
 #define MIRYOKU_LAYER_ALLCAPS \
-S(KC_Q),           S(KC_W),         S(KC_F),            S(KC_P),            S(KC_B),                    S(KC_J),            S(KC_L),            S(KC_U),           S(KC_Y),             S(KC_SLSH),           \
-S(KC_A),           S(KC_R),         S(KC_S),            S(KC_T),            S(KC_G),                    S(KC_M),            S(KC_N),            S(KC_E),           S(KC_I),             S(KC_O),      \
-S(KC_Z),           S(KC_X),         S(KC_C),            S(KC_D),            S(KC_V),                    S(KC_K),            S(KC_H),            S(KC_COMM),        S(KC_DOT),           S(KC_QUOT),   \
-U_NP,              U_NP,            xxxx,               xxxx,               xxxx,                       xxxx,               xxxx,               xxxx,              U_NP,                U_NP
+S(KC_Q),           S(KC_W),         S(KC_F),            S(KC_P),            S(KC_B),                    S(KC_J),            S(KC_L),            S(KC_U),            S(KC_Y),            S(KC_SLSH),           \
+S(KC_A),           S(KC_R),         S(KC_S),            S(KC_T),            S(KC_G),                    S(KC_M),            S(KC_N),            S(KC_E),            S(KC_I),            S(KC_O),      \
+S(KC_Z),           S(KC_X),         S(KC_C),            S(KC_D),            S(KC_V),                    S(KC_K),            S(KC_H),            KC_COMM,            KC_DOT,             KC_QUOT,   \
+U_NP,              U_NP,            xxxx,               xxxx,               xxxx,                       xxxx,               xxxx,               xxxx,               U_NP,               U_NP
 
 
 

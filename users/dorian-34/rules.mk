@@ -19,7 +19,7 @@ MIRYOKU_EXTRA=QWERTY
 MIRYOKU_CLIPBOARD=WIN # sets the shortcuts to be "Ctrl+V , Ctrl+C" etc
 SPLIT_KEYBOARD = yes
 
-
+CONSOLE_ENABLE = yes # needs to be on for the keylogger (so that the keyboard sends info to the pc)
 
 
 INTROSPECTION_KEYMAP_C = dorian-34.c # keymaps. Is needed

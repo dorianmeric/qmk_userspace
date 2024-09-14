@@ -118,6 +118,9 @@ char *alt_codes[][2] = {
 #include "miryoku.h"      // needs to come after the custom keycodes
 #include "keymap_combo.h" // originally from keyboards/gboards/g/
 
+#ifdef CONSOLE_ENABLE
+    #include "print.h"
+#endif
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 bool leftmod_pressed(void);
@@ -140,6 +143,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // if (!process_achordion(keycode, record)) {
     //     return false;
     // }
+    #ifdef CONSOLE_ENABLE // needed for the keylogger
+        const bool is_combo = record->event.type == COMBO_EVENT;
+        uprintf("0x%04X,%u,%u,%u,%x,0x%02X,0x%02X,%u\n",
+             keycode,
+             is_combo ? 254 : record->event.key.row,
+             is_combo ? 254 : record->event.key.col,
+             get_highest_layer(layer_state),
+             record->event.pressed,
+             get_mods(),
+             get_oneshot_mods(),
+             record->tap.count
+             );
+    #endif
 
     if (record->event.pressed) {
         switch (keycode) {
@@ -189,7 +205,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case S_T:   SEND_STRING("07556536531");  return false;
             case S_G:   SEND_STRING("\n\nRegards,\nDorian"); return false;
 
-            case S_Z:   SEND_STRING("");  return false;
+            case S_Z:   SEND_STRING("merdo01");  return false;
             case S_X:   SEND_STRING("dorian.meric@mufgsecurities.com");  return false;
             case S_C:   SEND_STRING("saloute@gmail.com");  return false;
             case S_D:   SEND_STRING("d.meric@gmail.com");  return false;
