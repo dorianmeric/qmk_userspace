@@ -22,8 +22,10 @@ COMB( combo98,     QK_BOOTLOADER,            KC_Q,  KC_W, KC_F,  KC_P,  KC_B)   
 // Right Hand /////////////////////////////////////////////////////////////////////////////////////////////
 COMB( combo01,     RCTL(KC_BSPC),            J_KEY,          KC_L       )           // u++i = Backspace Word
 COMB( combo05,     RCTL(KC_DEL),             KC_U,           KC_Y       )           // m+, = delete next word     h,
-COMB( combo08,     KC_COLON,                 RSFT_T(KC_N),   KC_H       )           // m+k = :
-COMB( combo07,     KC_MINUS,                 RCTL_T(KC_E),   KC_COMM            )           // g+v = -  , can also get _ with a Shift  
+COMB( combo08a,    KC_COLON,                 RSFT_T(KC_N),   KC_H       )           // m+k = :
+COMB( combo08b,    KC_SEMICOLON,             RSFT_T(KC_N),   KC_H     , LSFT_T(KC_T)    )           // m+k = :
+COMB( combo07a,    KC_MINUS,                 RCTL_T(KC_E),   KC_COMM            )           // g+v = -  , can also get _ with a Shift  
+COMB( combo07b,    KC_UNDERSCORE,            RCTL_T(KC_E),   KC_COMM  , LSFT_T(KC_T)          )           // g+v = -  , can also get _ with a Shift  
 COMB( combo10,     ALT_E_S,                  LALT_T(KC_I),   ALGR_T(KC_DOT)           )        // i+. = Alt+e,s
 
 COMB( combo99,     QK_BOOTLOADER,            J_KEY,              KC_L,              KC_U,             KC_Y,              KC_SLSH)       // whole top row = puts the mcu in bootloader mode

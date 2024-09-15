@@ -246,7 +246,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case S_SLSH:SEND_STRING("MUFG Securities EMEA Plc");  return false;
 
             case S_M:   SEND_STRING("MUFG");  return false;
-            case S_N:   SEND_STRING("");  return false;
+            case S_N:   SEND_STRING(" ");  return false;
             case S_E:   SEND_STRING("Global Blended Finance (GBF)");  return false;
             case S_I:   SEND_STRING("");  return false;
             case S_O:   SEND_STRING("");  return false;
