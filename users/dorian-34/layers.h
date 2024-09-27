@@ -12,7 +12,7 @@
 
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH \
-KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,              KC_QUESTION,           \
+KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,              KC_SLSH,           \
 LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,                       KC_M,              RSFT_T(KC_N),      RCTL_T(KC_E),      LALT_T(KC_I),      RGUI_T(KC_O),      \
 KC_Z,              ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,                       KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_QUOT,            \
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),TH1,               TH2,                        TH3,               TH4,               LT(U_FUN,KC_DEL),   U_NP,              U_NP
@@ -66,14 +66,18 @@ U_NP,              U_NP,              KC_DOT,            KC_0,              TH2,
 #define MIRYOKU_ALTERNATIVES_SYM \
 KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LCBR,           KC_RCBR,           KC_LEFT_BRACKET,   KC_RIGHT_BRACKET,   KC_DEL,               \
 KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,                    KC_DLR,            KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
-KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_POUND,         CCY_EURO,          CCY_YEN,           KC_ALGR,           TD(U_TD_U_SYM),              \
+KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_EURO,          CCY_POUND,          CCY_YEN,           KC_ALGR,           TD(U_TD_U_SYM),              \
 U_NP,              U_NP,              xxxx,              TH1,               TH2,                        TH3,               xxxx,              xxxx,              U_NP,              U_NP
 
 // BOTH RIGHT
+
+// DF(U_EXTRA)    for the QWERTY layout
+// TD(U_TD_BOOT)  for the boot
+
 #define MIRYOKU_ALTERNATIVES_FUN \
-KC_F10,            KC_F7,             KC_F8,             KC_F9,             KC_PSCR,                    xxxx,              xxxx,              xxxx,             DF(U_EXTRA),        TD(U_TD_BOOT),            \
+KC_F10,            KC_F7,             KC_F8,             KC_F9,             KC_PSCR,                    xxxx,              xxxx,              xxxx,              xxxx,              xxxx,            \
 KC_F11,            KC_F4,             KC_F5,             KC_F6,             KC_SCRL,                    xxxx,              KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
-KC_F12,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,                    KC_F2,             TD(U_TD_U_FUN),    KC_ALGR,           DF(U_GAME),         DF(U_BASE),              \
+KC_F12,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,                    KC_F2,             TD(U_TD_U_FUN),    KC_ALGR,           DF(U_GAME),        DF(U_BASE),              \
 U_NP,              U_NP,              xxxx,              KC_TAB,            KC_SPC,                     xxxx,              xxxx,              xxxx,              U_NP,              U_NP
 
 

@@ -230,13 +230,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case S_R:   SEND_STRING("London");  return false;
             case S_S:   SEND_STRING("SW11 6AJ");  return false;
             case S_T:   SEND_STRING("07556536531");  return false;
-            case S_G:   SEND_STRING("\n\nRegards,\nDorian"); return false;
+            case S_G:   SEND_STRING("Regards,\nDorian"); return false;
 
             case S_Z:   SEND_STRING("merdo01");  return false;
             case S_X:   SEND_STRING("dorian.meric@mufgsecurities.com");  return false;
             case S_C:   SEND_STRING("saloute@gmail.com");  return false;
             case S_D:   SEND_STRING("d.meric@gmail.com");  return false;
-            case S_V:   SEND_STRING("\n\nThanks,\nDorian"); return false;
+            case S_V:   SEND_STRING("Thanks,\nDorian"); return false; // SEND_STRING("SEND_STRING("Thanks,\nDorian");");
             
             // right hand
             case S_J:   SEND_STRING("MUSE");  return false;
@@ -246,7 +246,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case S_SLSH:SEND_STRING("MUFG Securities EMEA Plc");  return false;
 
             case S_M:   SEND_STRING("MUFG");  return false;
-            case S_N:   SEND_STRING(" ");  return false;
+            case S_N:   SEND_STRING("");  return false;
             case S_E:   SEND_STRING("Global Blended Finance (GBF)");  return false;
             case S_I:   SEND_STRING("");  return false;
             case S_O:   SEND_STRING("");  return false;
@@ -377,16 +377,16 @@ bool get_combo_must_press_in_order(uint16_t index, combo_t *combo) {
         case combo_io:
         case combo_oi:
 
-        case combo_email1:
-        case combo_email2:
-        case combo_email3:
-        case combo_text1:
-        case combo_text2:
-        case combo_text3:
-        case combo_text5:
-        case combo_text6:
-        case combo_regards:
-        case combo_thanks:
+        // case combo_email1:
+        // case combo_email2:
+        // case combo_email3:
+        // case combo_text1:
+        // case combo_text2:
+        // case combo_text3:
+        // case combo_text5:
+        // case combo_text6:
+        // case combo_regards:
+        // case combo_thanks:
 
             return true;
 
@@ -470,13 +470,13 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 //can disable by removing KEY_OVERRIDE_ENABLE
 const key_override_t delete_key_override =  ko_make_basic(MOD_MASK_SHIFT, TH3,          LT(U_NUM,   KC_DEL));  // actually only does a Del (not able to hold)
 const key_override_t semicolon =            ko_make_basic(MOD_MASK_SHIFT, KC_COLON,     KC_SEMICOLON);
-const key_override_t questionmark =         ko_make_basic(MOD_MASK_SHIFT, KC_QUESTION,  KC_SLSH);
+const key_override_t questionmark =         ko_make_basic(MOD_MASK_SHIFT, KC_QUESTION,  KC_SLSH);  // flips the slash and the question mark "/" and "?"
 
 // This globally defines all key overrides to be used
 const key_override_t *key_overrides[] = {
 	&delete_key_override,
-    &semicolon,
-    &questionmark
+    &semicolon  // good
+    // &questionmark   // actually it takes too much time to relearn
 };
 
 

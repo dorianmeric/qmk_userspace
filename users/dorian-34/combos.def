@@ -58,17 +58,20 @@ SUBS( combo_you,    "you",            KC_Y,          RGUI_T(KC_O),   KC_U       
 SUBS( combo_You,    "You",            LSFT_T(KC_T),  KC_Y,           RGUI_T(KC_O),   KC_U     )  
 SUBS( combo_bps,    "bps",            KC_B,          KC_P,           LCTL_T(KC_S)             )
 
-SUBS( combo_email1,  "d.meric@gmail.com",                   KC_K,              KC_D             )   
-SUBS( combo_email2,  "saloute@gmail.com",                   KC_K,              KC_C             )     
-SUBS( combo_email3,  "dorian.meric@mufgsecurities.com",     KC_K,              ALGR_T(KC_X)     )   
-SUBS( combo_text0,   "merdo01",                             KC_K,              KC_Z     )   
+// too risky, too many false positives
+// SUBS( combo_email1,  "d.meric@gmail.com",                   KC_K,              KC_D             )   
+// SUBS( combo_email2,  "saloute@gmail.com",                   KC_K,              KC_C             )     
+// SUBS( combo_email3,  "dorian.meric@mufgsecurities.com",     KC_K,              ALGR_T(KC_X)     )   
+// SUBS( combo_text0,   "merdo01",                             KC_K,              KC_Z     )   
 
-SUBS( combo_text1,      "MUSE",                             KC_V,              J_KEY       )   
-SUBS( combo_text2,      "MUFG",                             KC_V,              KC_M       )   
-SUBS( combo_text3,      "MUBK",                             KC_V,              KC_K       )    
-SUBS( combo_text5,      "SOFR",                             KC_V,              KC_L       )
-SUBS( combo_text6,      "6mE",                              KC_V,              KC_H       )
+// SUBS( combo_text1,      "MUSE",                             KC_V,              J_KEY       )   
+// SUBS( combo_text2,      "MUFG",                             KC_V,              KC_M       )   
+// SUBS( combo_text3,      "MUBK",                             KC_V,              KC_K       )    
+// SUBS( combo_text5,      "SOFR",                             KC_V,              KC_L       )
+// SUBS( combo_text6,      "6mE",                              KC_V,              KC_H       )
 
-SUBS( combo_regards,    "\n\nRegards,\nDorian",                 KC_K,              KC_G        )   
-SUBS( combo_thanks,     "\n\nThanks,\nDorian",                  KC_K,              KC_V        )   
+// SUBS( combo_regards,    "Regards,\nDorian",                 KC_K,              KC_G        )   
+// SUBS( combo_thanks,     "Thanks,\nDorian",                  KC_K,              KC_V        )   
+
+
 // SUBS( combo_dorian,     "Dorian",                           KC_Z,              KC_C        )  
