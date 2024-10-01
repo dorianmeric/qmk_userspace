@@ -12,8 +12,8 @@ COMB( combo18,     LCTL(KC_X),               KC_Z,           ALGR_T(KC_X)    )  
 COMB( combo16,     LCTL(KC_C),               ALGR_T(KC_X),   KC_C            )       // x+c = Ctrl+c
 COMB( combo17,     LCTL(KC_V),               KC_C,           KC_D            )       // c+v = Ctrl+v
 COMB( combo19,     KC_ENT,                   KC_D,           KC_V            )       // d+v = Ent
-COMB( combo20,     KC_BACKSPACE,             LSFT_T(KC_T),   KC_G            )       // t+g = Backspace
-COMB( combo21,     KC_TAB,                   KC_W,           KC_F            )           // w+f = tab
+// COMB( combo20,     KC_BACKSPACE,             LSFT_T(KC_T),   KC_G            )       // t+g = Backspace
+// COMB( combo21,     KC_TAB,                   KC_W,           KC_F            )           // w+f = tab   // if need to keep Tab pressed?
 
 COMB( combo98,     QK_BOOTLOADER,            KC_Q,  KC_W, KC_F,  KC_P,  KC_B)       // whole top row = puts the mcu in bootloader mode
 
@@ -27,6 +27,7 @@ COMB( combo08b,    KC_SEMICOLON,             RSFT_T(KC_N),   KC_H     , LSFT_T(K
 COMB( combo07a,    KC_MINUS,                 RCTL_T(KC_E),   KC_COMM            )           // g+v = -  , can also get _ with a Shift  
 COMB( combo07b,    KC_UNDERSCORE,            RCTL_T(KC_E),   KC_COMM  , LSFT_T(KC_T)          )           // g+v = -  , can also get _ with a Shift  
 COMB( combo10,     ALT_E_S,                  LALT_T(KC_I),   ALGR_T(KC_DOT)           )        // i+. = Alt+e,s
+COMB( combo11,     A(KC_EQL),                RGUI_T(KC_O),   KC_QUOT           )        // o+' = Alt+=
 
 COMB( combo99,     QK_BOOTLOADER,            J_KEY,              KC_L,              KC_U,             KC_Y,              KC_SLSH)       // whole top row = puts the mcu in bootloader mode
 
