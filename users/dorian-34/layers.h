@@ -10,18 +10,30 @@
 #define TH3     LT(U_NUM,   KC_BSPC)
 #define TH4     LT(U_SYM,   KC_ENT)
 
+// base keys
+#define BS_A    LGUI_T(KC_A)
+#define BS_R    LALT_T(KC_R)
+#define BS_S    LCTL_T(KC_S)
+#define BS_T    LSFT_T(KC_T)
+#define BS_N    RSFT_T(KC_N)
+#define BS_E    RCTL_T(KC_E)
+#define BS_I    LALT_T(KC_I)
+#define BS_O    RGUI_T(KC_O)
+#define BS_X    ALGR_T(KC_X)
+#define BS_DOT  ALGR_T(KC_DOT)
+
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH \
-KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,              KC_SLSH,           \
-LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,                       KC_M,              RSFT_T(KC_N),      RCTL_T(KC_E),      LALT_T(KC_I),      RGUI_T(KC_O),      \
-KC_Z,              ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,                       KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_QUOT,            \
-U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),TH1,               TH2,                        TH3,               TH4,               LT(U_FUN,KC_DEL),   U_NP,              U_NP
+KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                       J_KEY,             KC_L,              KC_U,             KC_Y,               KC_SLSH,           \
+BS_A,              BS_R,              BS_S,              BS_T,              KC_G,                       KC_M,              BS_N,              BS_E,             BS_I,               BS_O,      \
+KC_Z,              BS_X,              KC_C,              KC_D,              KC_V,                       KC_K,              KC_H,              KC_COMM,          BS_DOT,             KC_QUOT,            \
+U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),TH1,               TH2,                        TH3,               TH4,               LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
 
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTY \
 KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,                       Y_KEY,             KC_U,              KC_I,              KC_O,              KC_P,              \
 LWIN_T(KC_A),      LALT_T(KC_S),      LCTL_T(KC_D),      LSFT_T(KC_F),      KC_G,                       KC_H,              LSFT_T(KC_J),      LCTL_T(KC_K),      LALT_T(KC_L),      LWIN_T(KC_QUOT),   \
-KC_Z,              ALGR_T(KC_X),      KC_C,              KC_V,              KC_B,                       KC_N,              KC_M,              KC_COMM,           ALGR_T(KC_DOT),    KC_SLSH,            \
+KC_Z,              BS_X,              KC_C,              KC_V,              KC_B,                       KC_N,              KC_M,              KC_COMM,           BS_DOT,            KC_SLSH,            \
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),TH1,               TH2,                        TH3,               TH4,               LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
 

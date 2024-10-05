@@ -16,18 +16,36 @@
 #define Y_KEY MT(MOD_RCTL | MOD_RALT | MOD_RSFT,KC_Y)
 #define J_KEY MT(MOD_RCTL | MOD_RALT | MOD_RSFT,KC_J)
 
+// Thumb keys
+#define TH1     LT(U_MOUSE, KC_TAB)
+#define TH2     LT(U_NAV,   KC_SPC)          
+#define TH3     LT(U_NUM,   KC_BSPC)
+#define TH4     LT(U_SYM,   KC_ENT)
+
+// base keys
+#define BS_A    LGUI_T(KC_A)
+#define BS_R    LALT_T(KC_R)
+#define BS_S    LCTL_T(KC_S)
+#define BS_T    LSFT_T(KC_T)
+#define BS_N    RSFT_T(KC_N)
+#define BS_E    RCTL_T(KC_E)
+#define BS_I    LALT_T(KC_I)
+#define BS_O    RGUI_T(KC_O)
+#define BS_X    ALGR_T(KC_X)
+#define BS_DOT  ALGR_T(KC_DOT)
+
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH \
 KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,                 KC_PGUP, KC_PGDN,         J_KEY,              KC_L,              KC_U,             KC_Y,              KC_SLSH,           \
-LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,             KC_KP_PLUS,  KC_KP_MINUS,     KC_M,              RSFT_T(KC_N),      RCTL_T(KC_E),      RALT_T(KC_I),      RGUI_T(KC_O),      \
-KC_Z,               ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,        KC_KP_ASTERISK,  KC_KP_SLASH,         KC_K,              KC_H,              KC_COMM,          ALGR_T(KC_DOT),    KC_QUOT,             \
+BS_A,      BS_R,      BS_S,      BS_T,      KC_G,             KC_KP_PLUS,  KC_KP_MINUS,     KC_M,              BS_N,      BS_E,      RALT_T(KC_I),      BS_O,      \
+KC_Z,               BS_X,      KC_C,              KC_D,              KC_V,        KC_KP_ASTERISK,  KC_KP_SLASH,         KC_K,              KC_H,              KC_COMM,          BS_DOT,    KC_QUOT,             \
 xxxx,              xxxx,              LT(U_MEDIA,KC_ESC),   LT(U_MOUSE,KC_TAB),  LT(U_NAV,KC_SPC),  xxxx,   xxxx,        LT(U_NUM,KC_BSPC), LT(U_SYM,KC_ENT), LT(U_FUN,KC_DEL),    xxxx,              xxxx
 
 
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTY \
 KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,                   xxxx,   xxxx,         Y_KEY,             KC_U,              KC_I,              KC_O,              KC_P,              \
 LWIN_T(KC_A),      LALT_T(KC_S),      LCTL_T(KC_D),      LSFT_T(KC_F),      KC_G,                   xxxx,   xxxx,         KC_H,              LSFT_T(KC_J),      LCTL_T(KC_K),      LALT_T(KC_L),      LWIN_T(KC_QUOT),   \
-KC_Z,              ALGR_T(KC_X),      KC_C,              KC_V,              KC_B,                   xxxx,   xxxx,         KC_N,              KC_M,              KC_COMM,           ALGR_T(KC_DOT),    KC_SLSH,            \
+KC_Z,              BS_X,      KC_C,              KC_V,              KC_B,                   xxxx,   xxxx,         KC_N,              KC_M,              KC_COMM,           BS_DOT,    KC_SLSH,            \
 xxxx,              xxxx,              LT(U_MEDIA,KC_ESC),   LT(U_MOUSE,KC_TAB),  LT(U_NAV,KC_SPC),  xxxx,   xxxx,        LT(U_NUM,KC_BSPC), LT(U_SYM,KC_ENT), LT(U_FUN,KC_DEL),    xxxx,              xxxx
 
 

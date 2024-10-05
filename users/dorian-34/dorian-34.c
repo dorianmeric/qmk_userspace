@@ -21,10 +21,22 @@ enum custom_keycodes {
     JIGGLE,
 
     ALT_E_S,
+    ALT_O_C_A,
 
     S_Q,                S_W,            S_F,            S_P,            S_B,                    S_J,            S_L,            S_U,           S_Y,             S_SLSH,           
     S_A,                S_R,            S_S,            S_T,            S_G,                    S_M,            S_N,            S_E,           S_I,             S_O,      
-    S_Z,                S_X,            S_C,            S_D,            S_V,                    S_K,            S_H,            S_COMM,        S_DOT,           S_QUOT
+    S_Z,                S_X,            S_C,            S_D,            S_V,                    S_K,            S_H,            S_COMM,        S_DOT,           S_QUOT,
+
+    BS_A,
+    BS_R,
+    BS_S,
+    BS_T,
+    BS_N,
+    BS_E,
+    BS_I,
+    BS_O,
+    BS_X,
+    BS_DOT,
 
     // SS_MUFG,
     // SS_MUSE
@@ -216,6 +228,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 
             case ALT_E_S: SEND_STRING(SS_LALT(SS_TAP(X_E)) SS_TAP(X_S)); return false; // Alt+e s                 
+            case ALT_O_C_A: SEND_STRING(SS_LALT(SS_TAP(X_O)) SS_TAP(X_C) SS_TAP(X_A)); return false; // Alt+o,c,a  // auto-size column                 
 
 
             // Snippets
@@ -262,15 +275,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // disables the mod keys on the other side of the keyboard when Ctrl or Shift is held.
     switch (keycode) {
-        case LSFT_T(KC_T): return simple_mod_right(KC_T, record);
-        case LGUI_T(KC_A): return simple_mod_right(KC_A, record);
-        case LALT_T(KC_R): return simple_mod_right(KC_R, record);
-        case LCTL_T(KC_S): return simple_mod_right(KC_S, record);
+        case BS_T: return simple_mod_right(KC_T, record);
+        case BS_A: return simple_mod_right(KC_A, record);
+        case BS_R: return simple_mod_right(KC_R, record);
+        case BS_S: return simple_mod_right(KC_S, record);
 
-        case RSFT_T(KC_N): return simple_mod_left(KC_N, record);
-        case RCTL_T(KC_E): return simple_mod_left(KC_E, record);
-        case LALT_T(KC_I): return simple_mod_left(KC_I, record);
-        case RGUI_T(KC_O): return simple_mod_left(KC_O, record);
+        case BS_N: return simple_mod_left(KC_N, record);
+        case BS_E: return simple_mod_left(KC_E, record);
+        case BS_I: return simple_mod_left(KC_I, record);
+        case BS_O: return simple_mod_left(KC_O, record);
     }
 
     // MOUSE JIGGLE
@@ -311,19 +324,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //     // if the opposite-hand shift is pressed, treat the home-row key like a letter (ie. disable the hold action)
 //     if (rightmod_pressed()) {
 //         switch (keycode) {
-//             case LSFT_T(KC_T): return KC_T;
-//             case LGUI_T(KC_A): return KC_A;
-//             case LALT_T(KC_R): return KC_R;
-//             case LCTL_T(KC_S): return KC_S;
+//             case BS_T: return KC_T;
+//             case BS_A: return KC_A;
+//             case BS_R: return KC_R;
+//             case BS_S: return KC_S;
 //         }
 //     }
 
 //     if (leftmod_pressed()) {
 //         switch (keycode) {
-//             case RSFT_T(KC_N): return KC_N;
-//             case RCTL_T(KC_E): return KC_E;
-//             case LALT_T(KC_I): return KC_I;
-//             case RGUI_T(KC_O): return KC_O;
+//             case BS_N: return KC_N;
+//             case BS_E: return KC_E;
+//             case BS_I: return KC_I;
+//             case BS_O: return KC_O;
 //         }
 //     }
 
@@ -345,7 +358,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
             return 200;
 
         default:
-            return 30; // COMBO_TERM;
+            return 25; // COMBO_TERM;
     }
 }
 
@@ -353,18 +366,18 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 // https://docs.qmk.fm/#/tap_hold?id=tap-hold-configuration-optionszt
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A): // windows key
-        case RGUI_T(KC_O): // windows key
-            return 350;
+        case BS_A: // windows key
+        case BS_O: // windows key
+            return 250;
 
-        case LCTL_T(KC_S): // Ctrl left
-        case RCTL_T(KC_E): // Ctrl right
-        case LALT_T(KC_R): // alt left
-        case LALT_T(KC_I): // alt right
+        case BS_S: // Ctrl left
+        case BS_E: // Ctrl right
+        case BS_R: // alt left
+        case BS_I: // alt right
             return 200;
 
-        case LSFT_T(KC_T): // Shift left
-        case RSFT_T(KC_N): // Shift right
+        case BS_T: // Shift left
+        case BS_N: // Shift right
             return 150;
 
         default:
@@ -376,17 +389,6 @@ bool get_combo_must_press_in_order(uint16_t index, combo_t *combo) {
     switch (index) {
         case combo_io:
         case combo_oi:
-
-        // case combo_email1:
-        // case combo_email2:
-        // case combo_email3:
-        // case combo_text1:
-        // case combo_text2:
-        // case combo_text3:
-        // case combo_text5:
-        // case combo_text6:
-        // case combo_regards:
-        // case combo_thanks:
 
             return true;
 
@@ -432,10 +434,10 @@ bool combo_should_trigger(uint16_t index, combo_t *combo, uint16_t keycode, keyr
 // https://github.com/qmk/qmk_firmware/blob/master/docs/tap_hold.md
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(U_MOUSE, KC_TAB):
-        case LT(U_NAV, KC_SPC):
-        case LT(U_NUM, KC_BSPC):
-        case LT(U_SYM, KC_ENT):
+        case TH1:
+        case TH2:
+        case TH3:
+        case TH4:
             // Immediately select the hold action when another key is tapped.
             return true;
 
@@ -449,10 +451,10 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 // bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 //     switch (keycode) {
 //         // these keys may be held by themselves and the mouse, and should be trated as the modifier (eg. shift mwheel)
-//         case LGUI_T(KC_A): // windows key
-//         case LALT_T(KC_R): // alt left
-//         case LCTL_T(KC_S): // Ctrl left
-//         case LSFT_T(KC_T): // Shift left
+//         case BS_A: // windows key
+//         case BS_R: // alt left
+//         case BS_S: // Ctrl left
+//         case BS_T: // Shift left
 //             return false;
 
 //         default:
@@ -474,7 +476,7 @@ const key_override_t questionmark =         ko_make_basic(MOD_MASK_SHIFT, KC_QUE
 
 // This globally defines all key overrides to be used
 const key_override_t *key_overrides[] = {
-	&delete_key_override,
+	// &delete_key_override, // remove as it messes up with the NUM thumbkey when pressing Shift (can't access the Num layer if Shift is already pressed)
     &semicolon  // good
     // &questionmark   // actually it takes too much time to relearn
 };

@@ -23,8 +23,8 @@ COMB( thum_num,        KC_DOT,                       KC_0,                   KC_
 // COMB(combo14,     LSFT(KC_F9),              KC_Z,              KC_G         )       // r+t = Shift+F9
 // COMB(combo13,     KC_ESC,                   KC_W,              KC_E         )       // w+e = Esc
 // COMB(combo11,     LCTL(KC_S),               KC_Z,           LSFT_T(KC_F)         )       // e+r =  Ctrl+S
-COMB(combo18,     LCTL(KC_X),               KC_Z,           ALGR_T(KC_X)    )       // z+x = Ctrl+x
-COMB(combo16,     LCTL(KC_C),               ALGR_T(KC_X),   KC_C            )       // x+c = Ctrl+c
+COMB(combo18,     LCTL(KC_X),               KC_Z,           BS_X    )       // z+x = Ctrl+x
+COMB(combo16,     LCTL(KC_C),               BS_X,   KC_C            )       // x+c = Ctrl+c
 COMB(combo17,     LCTL(KC_V),               KC_C,           KC_D            )       // c+v = Ctrl+v
 COMB(combo19,     KC_ENT,                   KC_D,           KC_V            )       // c+v = Ctrl+v
 
@@ -38,11 +38,11 @@ COMB(combo01,     RCTL(KC_BSPC),            J_KEY,          KC_L            )   
 // COMB(combo02,     RSFT(KC_HOME),            Y_KEY,          KC_U            )            // y+u = Select line left
 // COMB(combo03,     KC_ENT,                   KC_K,           KC_L            )       // k+l = Enter
 
-// COMB(combo04,     KC_DEL,                   KC_COMM,        ALGR_T(KC_DOT)  )           // ,+. = Del   ,.
+// COMB(combo04,     KC_DEL,                   KC_COMM,        BS_DOT  )           // ,+. = Del   ,.
 COMB(combo05,     RCTL(KC_DEL),             KC_U,           KC_Y         )           // m+, = delete next word     h,
 // COMB(combo06,     RSFT(KC_END),             KC_N,           KC_M            )            // n+m = Select line right   kh
 
-COMB(combo07,     KC_MINUS,                 KC_M,           RSFT_T(KC_N)    )           // h+j = -  , can also get _ with a Shift   
+COMB(combo07,     KC_MINUS,                 KC_M,           BS_N    )           // h+j = -  , can also get _ with a Shift   
 COMB(combo08,     KC_SEMICOLON,             KC_M,           KC_K    )                   // m+k = :
 
 // COMB(combo09,     KC_SCLN,                  KC_H,           LALT_T(KC_L)    )            // k+l = ;

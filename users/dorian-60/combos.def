@@ -36,11 +36,11 @@ COMB(combo01,     RCTL(KC_BSPC),            J_KEY,           KC_L            )  
 // COMB(combo02,     RSFT(KC_HOME),            Y_KEY,          KC_U            )            // y+u = Select line left
 // COMB(combo03,     KC_ENT,                   KC_K,           KC_L            )       // k+l = Enter
 
-// COMB(combo04,     KC_DEL,                   KC_COMM,        ALGR_T(KC_DOT)  )           // ,+. = Del
+// COMB(combo04,     KC_DEL,                   KC_COMM,        BS_DOT  )           // ,+. = Del
 COMB(combo05,     RCTL(KC_DEL),             KC_U,              KC_Y         )           // m+, = delete next word
 // COMB(combo06,     RSFT(KC_END),             KC_N,           KC_M            )            // n+m = Select line right
 
-COMB(combo07,     KC_MINUS,                 RSFT_T(KC_N),      KC_H   )           // h+j = -  , can also get _ with a Shift
+COMB(combo07,     KC_MINUS,                 BS_N,      KC_H   )           // h+j = -  , can also get _ with a Shift
 // COMB(combo08,     KC_COLN,                  KC_H,           LCTL_T(KC_K)    )           // j+k = :
 // COMB(combo09,     KC_SCLN,                  KC_H,           LALT_T(KC_L)    )           // k+l = ;
 

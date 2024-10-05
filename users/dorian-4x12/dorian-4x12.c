@@ -23,6 +23,21 @@ enum custom_keycodes {
     FR_E_CIRC,
     FR_U_CIRC,
     JIGGLE,
+
+    S_Q,                S_W,            S_F,            S_P,            S_B,                    S_J,            S_L,            S_U,           S_Y,             S_SLSH,           
+    S_A,                S_R,            S_S,            S_T,            S_G,                    S_M,            S_N,            S_E,           S_I,             S_O,      
+    S_Z,                S_X,            S_C,            S_D,            S_V,                    S_K,            S_H,            S_COMM,        S_DOT,           S_QUOT,
+
+    BS_A,
+    BS_R,
+    BS_S,
+    BS_T,
+    BS_N,
+    BS_E,
+    BS_I,
+    BS_O,
+    BS_X,
+    BS_DOT,
 };
 
 // £ 0163
@@ -276,15 +291,15 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 // https://docs.qmk.fm/#/tap_hold?id=tap-hold-configuration-optionszt
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A): // windows key
-        case RGUI_T(KC_O): // windows key
+        case BS_A: // windows key
+        case BS_O: // windows key
             return 400;
 
-        case LALT_T(KC_R):
-        case LCTL_T(KC_S):
-        case LSFT_T(KC_T):
-        case RSFT_T(KC_N):
-        case RCTL_T(KC_E):
+        case BS_R:
+        case BS_S:
+        case BS_T:
+        case BS_N:
+        case BS_E:
         case RALT_T(KC_I):
             return 200;
 
