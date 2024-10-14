@@ -120,7 +120,7 @@ char *alt_codes[][2] = {
     },
     {
         SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_9)), // Alt+0239 → ï
-        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_0) SS_TAP(X_KP_7)), // Alt+0207 → Ï
+        SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_0) SS_TAP(X_K-P_7)), // Alt+0207 → Ï
     },
     {
         SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_5) SS_TAP(X_KP_2)), // Alt+0252 → ü

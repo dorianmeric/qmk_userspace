@@ -48,8 +48,8 @@ U_NP,              U_NP,              xxxx,              xxxx,              xxxx
 
 #define MIRYOKU_ALTERNATIVES_MOUSE \
 DM_REC1,           DM_PLY1,           DM_REC2,           DM_PLY2,           DM_RSTP,                    KC_WWW_BACK,       KC_WWW_FORWARD,    xxxx,              xxxx,              JIGGLE,             \
-KC_LGUI,           KC_LALT,           KC_LCTL,           C(KC_S),           LSFT(KC_F9),                xxxx,              KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
-TD(U_TD_U_MOUSE),  RSFT(KC_HOME),     KC_F9,        QK_CAPS_WORD_TOGGLE,    RSFT(KC_END),               xxxx,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
+KC_LGUI,           KC_LALT,           KC_LCTL,           C(KC_S),           LSFT(KC_F9),                KC_BTN3,           KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
+xxxx,              RSFT(KC_HOME),     KC_F9,        QK_CAPS_WORD_TOGGLE,    RSFT(KC_END),               KC_BTN2,           KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
 U_NP,              U_NP,              xxxx,              xxxx,              TH2,                        KC_BTN1,           TH4,               KC_BTN3,           U_NP,              U_NP
 
 
@@ -71,15 +71,15 @@ U_NP,               U_NP,              xxxx,              xxxx,              xxx
 #define MIRYOKU_ALTERNATIVES_NUM \
 KC_LPRN,           KC_7,              KC_8,              KC_9,              KC_RPRN,                    KC_E,              KC_F4,            KC_CIRC,           MO(U_NUMPAD),      xxxx,              \
 KC_COMM,           KC_4,              KC_5,              KC_6,              KC_EQL,                     KC_KP_PLUS,        KC_RSFT,          KC_RCTL,           KC_LALT,           KC_RGUI,           \
-KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_KP_MINUS,       KC_KP_ASTERISK,   KC_KP_SLASH,  LM(U_NUMPAD,MOD_LALT), TD(U_TD_U_NUM),              \
+KC_DOT,            KC_1,              KC_2,              KC_3,              KC_BSLS,                    KC_KP_MINUS,       KC_KP_ASTERISK,   KC_KP_SLASH,  LM(U_NUMPAD,MOD_LALT), xxxx,              \
 U_NP,              U_NP,              KC_DOT,            KC_0,              TH2,                        xxxx,              xxxx,             xxxx,              U_NP,              U_NP
 
 // layers for symbols. RIGHTMOST RIGHT THUMB
 #define MIRYOKU_ALTERNATIVES_SYM \
-KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LCBR,           KC_RCBR,           KC_LEFT_BRACKET,   KC_RIGHT_BRACKET,   KC_DEL,               \
+KC_GRAVE,          KC_AMPR,           KC_KP_ASTERISK,    KC_LPRN,           KC_RPRN,                    KC_LCBR,           KC_RCBR,           KC_LEFT_BRACKET,   KC_RIGHT_BRACKET,  KC_DEL,               \
 KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,                    KC_DLR,            KC_RSFT,           KC_RCTL,           KC_LALT,           KC_RGUI,           \
-KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_EURO,          CCY_POUND,         CCY_YEN,           KC_ALGR,           TD(U_TD_U_SYM),              \
-U_NP,              U_NP,              xxxx,              TH1,               TH2,                        TH3,               xxxx,              xxxx,              U_NP,              U_NP
+KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,                    CCY_EURO,          CCY_POUND,         CCY_YEN,           KC_ALGR,           xxxx,              \
+U_NP,              U_NP,              xxxx,              TH1,               TH2,                        TH3,               TH4,               xxxx,              U_NP,              U_NP
 
 // BOTH RIGHT
 
